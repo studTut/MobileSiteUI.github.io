@@ -6,9 +6,9 @@ const width = window.innerWidth;
 //unit = 1;
 
 if (height <= width) {
-	unit = height/400;
+	unit = height/200;
 } else {
-	unit = width/400;
+	unit = width/200;
 };
 
 
