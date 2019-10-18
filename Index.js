@@ -1,16 +1,17 @@
-let camera, scene, renderer, cube, material, unit;
+let camera, scene, renderer, cube, material;
 
 const height = window.innerHeight;
 const width = window.innerWidth;
 
 //unit = 1;
-/*
-if (height < width) {
-	unit = height/200;
-} else if {
-	unit = width/200;
-}
-*/
+
+if (height <= width) {
+	unit = height/300;
+} else {
+	unit = width/300;
+};
+
+
 function init() {
 	// Init scene
 	scene = new THREE.Scene();
@@ -33,7 +34,7 @@ function init() {
 	document.body.appendChild(renderer.domElement);
 
 	// Init BoxGeometry object (rectangular cuboid)
-	const geometry = new THREE.BoxGeometry(1, 1, 1);
+	const geometry = new THREE.BoxGeometry(unit, unit, unit);
 
 	// Create material with color
 	// material = new THREE.MeshBasicMaterial({ color: "hsl(360, 100%, 50%)" });
