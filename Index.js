@@ -1,12 +1,12 @@
-let camera, scene, renderer, cube, material;
+let camera, scene, renderer, cube, material, unit;
 
 const height = window.innerHeight;
 const width = window.innerWidth;
 
-if (height <= width) {
-	const unit = height/200;
+if (height < width) {
+	unit = height/200;
 } else if {
-	const unit = width/200;
+	unit = width/200;
 }
 
 function init() {
