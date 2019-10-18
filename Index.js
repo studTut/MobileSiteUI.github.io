@@ -6,9 +6,9 @@ const width = window.innerWidth;
 //unit = 1;
 
 if (height <= width) {
-	unit = height/200;
+	unit = height/400;
 } else {
-	unit = width/200;
+	unit = width/400;
 };
 
 
@@ -63,7 +63,8 @@ function animate() {
 	requestAnimationFrame(animate);
 
 	// Rotate cube (Change values to change speed)
-
+	cube.rotate.x += 0.01;
+	cube.rotate.y += 0.01;
 
 	renderer.render(scene, camera);
 }
