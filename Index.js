@@ -55,8 +55,8 @@ function animate() {
 	requestAnimationFrame(animate);
 
 	// Rotate cube (Change values to change speed)
-	//cube.rotation.x += 0.01;
-	//cube.rotation.y += 0.01;
+	cube.rotation.x += 0.01;
+	cube.rotation.y += 0.01;
 
 	renderer.render(scene, camera);
 }
@@ -69,8 +69,8 @@ function onWindowResize() {
 	// Reset size
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    cube.rotation.y = 0.01*(height - window.innerHeight);
-    cube.rotation.x = 0.01*(width - window.innerWidth);
+    //cube.rotation.y = 0.01*(height - window.innerHeight);
+    //cube.rotation.x = 0.01*(width - window.innerWidth);
 
     //material = new THREE.MeshBasicMaterial({ color: "hsl(360, 100%, 100%)" });
 
