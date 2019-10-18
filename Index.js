@@ -3,6 +3,11 @@ let camera, scene, renderer, cube, material;
 const height = window.innerHeight;
 const width = window.innerWidth;
 
+if (height <= width) {
+	const unit = height/200;
+} else if {
+	const unit = width/200;
+}
 
 function init() {
 	// Init scene
@@ -26,7 +31,7 @@ function init() {
 	document.body.appendChild(renderer.domElement);
 
 	// Init BoxGeometry object (rectangular cuboid)
-	const geometry = new THREE.BoxGeometry(3, 3, 3);
+	const geometry = new THREE.BoxGeometry(unit, unit, unit);
 
 	// Create material with color
 	// material = new THREE.MeshBasicMaterial({ color: "hsl(360, 100%, 50%)" });
