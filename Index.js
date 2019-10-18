@@ -3,12 +3,14 @@ let camera, scene, renderer, cube, material, unit;
 const height = window.innerHeight;
 const width = window.innerWidth;
 
+unit = 1;
+/*
 if (height < width) {
 	unit = height/200;
 } else if {
 	unit = width/200;
 }
-
+*/
 function init() {
 	// Init scene
 	scene = new THREE.Scene();
