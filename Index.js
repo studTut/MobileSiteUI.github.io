@@ -3,15 +3,24 @@ let camera, scene, renderer, cube, material;
 const height = window.innerHeight;
 const width = window.innerWidth;
 
+var alpha = 0, beta = 0, gamma = 0;             // ジャイロの値を入れる変数を3個用意
+ 
+// ジャイロセンサの値が変化したら実行される deviceorientation イベント
+window.addEventListener("deviceorientation", (dat) => {
+    alpha = dat.alpha;  // z軸（表裏）まわりの回転の角度（反時計回りがプラス）
+    beta  = dat.beta;   // x軸（左右）まわりの回転の角度（引き起こすとプラス）
+    gamma = dat.gamma;  // y軸（上下）まわりの回転の角度（右に傾けるとプラス）
+});
+
 //unit = 1;
-/*
+
 if (height <= width) {
 	unit = height/300;
 } else {
 	unit = width/300;
 };
-*/
-unit = width/400;
+
+//unit = width/400;
 
 function init() {
 	// Init scene
@@ -36,6 +45,7 @@ function init() {
 
 	// Init BoxGeometry object (rectangular cuboid)
 	const geometry = new THREE.BoxGeometry(unit, unit, unit);
+	//const geometry = new THREE.SphereGeometry( unit/2, 8, 8 );
 
 	// Create material with color
 	// material = new THREE.MeshBasicMaterial({ color: "hsl(360, 100%, 50%)" });
@@ -64,11 +74,15 @@ function animate() {
 	requestAnimationFrame(animate);
 
 	// Rotate cube (Change values to change speed)
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
+	//cube.rotation.x += 0.01;
+	//cube.rotation.y += 0.01;
+	cube.rotation.z = alpha/10;
+	cube.rotation.x = beta/10;
+	cube.rotation.y = gamma/10;
 
 	renderer.render(scene, camera);
 }
+
 
 function onWindowResize() {
 	// Camera frustum aspect ratio
