@@ -4,8 +4,7 @@ const height = window.innerHeight;
 const width = window.innerWidth;
 
 var alpha = 0, beta = 0, gamma = 0;
- 
-// ジャイロセンサの値が変化したら実行される deviceorientation イベント
+
 window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;
     beta  = dat.beta;
@@ -69,8 +68,8 @@ function animate() {
 	//cube.rotation.x += 0.01;
 	//cube.rotation.y += 0.01;
 	//cube.rotation.z = alpha/10;
-	cube.rotation.x = beta/10;
-	cube.rotation.y = gamma/10;
+	cube.rotation.x = -beta/10;
+	cube.rotation.y = -gamma/10;
 
 	renderer.render(scene, camera);
 }
