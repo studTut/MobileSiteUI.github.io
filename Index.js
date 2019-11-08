@@ -2,14 +2,14 @@ let camera, scene, renderer, cube, material;
 
 const height = window.innerHeight;
 const width = window.innerWidth;
-//const beta0 = dat.beta;
 
-var alpha = 0, beta = 0, gamma = 0;
-
+var alpha = 0, beta = 0, gamma = 0;             // ジャイロの値を入れる変数を3個用意
+ 
+// ジャイロセンサの値が変化したら実行される deviceorientation イベント
 window.addEventListener("deviceorientation", (dat) => {
-    alpha = dat.alpha;
-    beta  = dat.beta;
-    gamma = dat.gamma;
+    alpha = dat.alpha;  // z軸（表裏）まわりの回転の角度（反時計回りがプラス）
+    beta  = dat.beta;   // x軸（左右）まわりの回転の角度（引き起こすとプラス）
+    gamma = dat.gamma;  // y軸（上下）まわりの回転の角度（右に傾けるとプラス）
 });
 
 //unit = 1;
