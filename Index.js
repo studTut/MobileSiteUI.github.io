@@ -65,8 +65,8 @@ function animate() {
 	requestAnimationFrame(animate);
 
 	// Rotate cube (Change values to change speed)
-	//cube.rotation.x += 0.01;
-	//cube.rotation.y += 0.01;
+	cube.rotation.x += 0.01;
+	cube.rotation.y += 0.01;
 	
 	//cube.rotation.z = alpha/10;
 	//cube.rotation.x = -beta/10;
