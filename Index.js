@@ -3,13 +3,13 @@ let camera, scene, renderer, cube, material;
 const height = window.innerHeight;
 const width = window.innerWidth;
 
-var alpha = 0, beta = 0, gamma = 0;             // ジャイロの値を入れる変数を3個用意
+var alpha = 0, beta = 0, gamma = 0;
  
 // ジャイロセンサの値が変化したら実行される deviceorientation イベント
 window.addEventListener("deviceorientation", (dat) => {
-    alpha = dat.alpha;  // z軸（表裏）まわりの回転の角度（反時計回りがプラス）
-    beta  = dat.beta;   // x軸（左右）まわりの回転の角度（引き起こすとプラス）
-    gamma = dat.gamma;  // y軸（上下）まわりの回転の角度（右に傾けるとプラス）
+    alpha = dat.alpha;
+    beta  = dat.beta;
+    gamma = dat.gamma;
 });
 
 //unit = 1;
@@ -50,16 +50,8 @@ function init() {
 	// Create material with color
 	// material = new THREE.MeshBasicMaterial({ color: "hsl(360, 100%, 50%)" });
 	 material = new THREE.MeshNormalMaterial();
-	// material = new THREE.MeshToonMaterial({ color: "hsl(360, 100%, 50%)" });
-	// const material = new THREE.MeshPhongMaterial({ color: 0x6699FF });
-	// material = new THREE.MeshStandardMaterial({ color: "hsl(360, 100%, 50%)" });
 
-	// Add texture - 
-	// const texture = new THREE.TextureLoader().load('textures/crate.gif');
-
-	// Create material with texture
-	// const material = new THREE.MeshBasicMaterial({ map: texture });
-
+	
 	// Create mesh with geo and material
 	cube = new THREE.Mesh(geometry, material);
 	// Add to scene
@@ -76,9 +68,9 @@ function animate() {
 	// Rotate cube (Change values to change speed)
 	//cube.rotation.x += 0.01;
 	//cube.rotation.y += 0.01;
-	cube.rotation.z = alpha/30;
-	cube.rotation.x = beta/30;
-	cube.rotation.y = gamma/30;
+	cube.rotation.z = alpha/10;
+	cube.rotation.x = beta/10;
+	cube.rotation.y = gamma/10;
 
 	renderer.render(scene, camera);
 }
@@ -91,11 +83,6 @@ function onWindowResize() {
 	camera.updateProjectionMatrix();
 	// Reset size
     renderer.setSize(window.innerWidth, window.innerHeight);
-
-    //cube.rotation.y = 0.01*(height - window.innerHeight);
-    //cube.rotation.x = 0.01*(width - window.innerWidth);
-
-    //material = new THREE.MeshBasicMaterial({ color: "hsl(360, 100%, 100%)" });
 
     renderer.render(scene, camera);
 }
