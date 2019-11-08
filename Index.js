@@ -2,8 +2,9 @@ let camera, scene, renderer, cube, material;
 
 const height = window.innerHeight;
 const width = window.innerWidth;
+const beta0 = dat.beta;
 
-var alpha = 0, beta = 0, gamma = 0, beta0 = dat.beta;
+var alpha = 0, beta = 0, gamma = 0;
 
 window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;
