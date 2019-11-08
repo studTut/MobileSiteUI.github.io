@@ -76,9 +76,9 @@ function animate() {
 	// Rotate cube (Change values to change speed)
 	//cube.rotation.x += 0.01;
 	//cube.rotation.y += 0.01;
-	cube.rotation.z = alpha/10;
-	cube.rotation.x = beta/10;
-	cube.rotation.y = gamma/10;
+	cube.rotation.z = alpha/30;
+	cube.rotation.x = beta/30;
+	cube.rotation.y = gamma/30;
 
 	renderer.render(scene, camera);
 }
