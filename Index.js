@@ -3,7 +3,7 @@ let camera, scene, renderer, cube, material;
 const height = window.innerHeight;
 const width = window.innerWidth;
 
-var alpha = 0, beta = dat.beta, gamma = 0;
+var alpha = 0, beta = 0, gamma = 0, beta0 = dat.beta;
 
 window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;
@@ -72,7 +72,7 @@ function animate() {
 	//cube.rotation.x = -beta/10;
 	//cube.rotation.y = -gamma/10;
 	
-	camera.rotation.x = beta/20;
+	camera.rotation.x = beta0 + beta/20;
 	camera.rotation.y = gamma/20;
 
 	renderer.render(scene, camera);
