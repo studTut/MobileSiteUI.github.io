@@ -3,13 +3,12 @@ let camera, scene, renderer, cube, material;
 const height = window.innerHeight;
 const width = window.innerWidth;
 
-var alpha = 0, beta = 0, gamma = 0;             // ジャイロの値を入れる変数を3個用意
- 
-// ジャイロセンサの値が変化したら実行される deviceorientation イベント
+var alpha = 0, beta = 0, gamma = 0; 
+
 window.addEventListener("deviceorientation", (dat) => {
-    alpha = dat.alpha;  // z軸（表裏）まわりの回転の角度（反時計回りがプラス）
-    beta  = dat.beta;   // x軸（左右）まわりの回転の角度（引き起こすとプラス）
-    gamma = dat.gamma;  // y軸（上下）まわりの回転の角度（右に傾けるとプラス）
+    alpha = dat.alpha;
+    beta  = dat.beta; 
+    gamma = dat.gamma;
 });
 
 //unit = 1;
@@ -48,7 +47,6 @@ function init() {
 	//const geometry = new THREE.SphereGeometry( unit/2, 8, 8 );
 
 	// Create material with color
-	// material = new THREE.MeshBasicMaterial({ color: "hsl(360, 100%, 50%)" });
 	 material = new THREE.MeshNormalMaterial();
 
 	
