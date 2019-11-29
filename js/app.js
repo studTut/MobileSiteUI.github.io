@@ -75,7 +75,7 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-    camera.rotation.x = -20 + beta/40;
+    camera.rotation.x = -10 + beta/40;
     camera.rotation.y = gamma/40;
     renderer.render(scene, camera);
 }
