@@ -1,0 +1,40 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #f0f0f0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.content {
+  width: 300px;
+  height: 300px;
+  text-align: center;
+}
+
+#num1 {
+  background-color:skyblue;
+}
+
+.content a {
+  display: block;
+  padding: 100px 0;
+  text-align: center;
+  font-size:50px;
+  text-decoration: none;
+  color:white;
+}
+
+#num2 {
+  background-color:yellowgreen;
+}
+
+#num3 {
+  background-color:pink;
+}
+
+#num4 {
+  background-color:orange;
+}
