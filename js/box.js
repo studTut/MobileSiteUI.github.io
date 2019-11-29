@@ -66,7 +66,7 @@ function animate() {
 	cube.rotation.x += 0.01;
 	cube.rotation.y += 0.01;
 	
-    	camera.rotation.x = -20 + beta/40;
+    	camera.rotation.x = -10 + beta/40;
    	camera.rotation.y = gamma/40;
 
 	renderer.render(scene, camera);
