@@ -15,7 +15,10 @@ body {
 }
 
 #num1 {
-  background-color:skyblue;
+  border-radius: 50px;
+background: #93dcff;
+box-shadow:  20px 20px 60px #7dbbd9, 
+             -20px -20px 60px #a9fdff;
 }
 
 .content a {
@@ -25,6 +28,27 @@ body {
   font-size:50px;
   text-decoration: none;
   color:white;
+}
+
+#num2 {
+border-radius: 50px;
+background: linear-gradient(145deg, #6fff6f, #5ee65e);
+box-shadow:  20px 20px 60px #58d958, 
+             -20px -20px 60px #78ff78;
+}
+
+#num3 {
+  border-radius: 50px;
+background: linear-gradient(145deg, #ffd6ff, #e6b4e6);
+box-shadow:  20px 20px 60px #d9aad9, 
+             -20px -20px 60px #ffe6ff;background-color:pink;
+}
+
+#num4 {
+  border-radius: 50px;
+background: linear-gradient(145deg, #ffbd6b, #e69f5a);
+box-shadow:  20px 20px 60px #d99655, 
+             -20px -20px 60px #ffcc73;
 }
 
 #num2 {
