@@ -1,3 +1,10 @@
+var camera, scene, renderer;
+var controls;
+var object;
+
+var alpha = 0, beta = 0, gamma = 0;
+var line = 200;
+var space = line * 1.1;
 
 if(window.DeviceOrientationEvent){
     // ★iOS13向け: ユーザーにアクセスの許可を求める関数があるか？
@@ -25,13 +32,7 @@ if(window.DeviceOrientationEvent){
  
 // センサーの値を取得＋値が変わるたびにおこなう処理
 function deviceorientationHandler(){
-var camera, scene, renderer;
-var controls;
-var object;
 
-var alpha = 0, beta = 0, gamma = 0;
-var line = 200;
-var space = line * 1.1;
 
 window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;  // z軸（反時計回り）
