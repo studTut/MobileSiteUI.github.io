@@ -6,33 +6,6 @@ var alpha = 0, beta = 0, gamma = 0;
 var line = 200;
 var space = line * 1.1;
 
-if(window.DeviceOrientationEvent){
-    // ★iOS13向け: ユーザーにアクセスの許可を求める関数があるか？
-    if(DeviceOrientationEvent.requestPermission){
-        var sensor_contents= document.getElementById("sensor_contents");
-        // id="sensor_contents" な要素がクリックされたら
-        sensor_contents.addEventListener("click", function(){
-            // ★ジャイロセンサーのアクセス許可をリクエストする
-            DeviceOrientationEvent.requestPermission().then(function(response){
-                // リクエストが許可されたら
-                if(response === "granted"){
-                    // deviceorientationが有効化されるのでaddEventListener
-                    window.addEventListener("deviceorientation", deviceorientationHandler);
-                }
-            }).catch(function(e){
-                console.log(e);
-            });
-        });
-    // iOS13以外
-    }else{
-        // 通常通り、イベントハンドラを追加
-        window.addEventListener("deviceorientation", deviceorientationHandler);
-    }
-}
- 
-// センサーの値を取得＋値が変わるたびにおこなう処理
-function deviceorientationHandler(){
-
 
 window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;  // z軸（反時計回り）
