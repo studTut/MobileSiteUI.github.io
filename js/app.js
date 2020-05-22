@@ -34,10 +34,12 @@ function deviceorientationHandler(){
     alpha = dat.alpha;  // z軸（反時計回り）
     beta  = dat.beta;   // x軸（引き起こす）
     gamma = dat.gamma;  // y軸（右に傾ける）
+    init();
+    animate();
 }
 
-init();
-animate();
+//init();
+//animate();
 
 
 function init() {
