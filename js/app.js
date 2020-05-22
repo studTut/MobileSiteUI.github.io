@@ -48,6 +48,40 @@ function init() {
     scene.add(object4);
     object4.position.x = space;
     object4.position.y = -1*space;
+    
+
+
+    // CSS3Dレンダラー
+    renderer = new THREE.CSS3DRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight); 
+    renderer.domElement.style.position = 'absolute'; // スタイル設定
+    document.getElementById('container').appendChild(renderer.domElement); //#containerにappend
+    // カメラコントローラー
+    controls = new THREE.TrackballControls(camera, renderer.domElement);
+    controls.rotateSpeed = 0.5; // 感度設定
+    controls.addEventListener('change', render); // 値が変わった（マウスで何か位置が変更された）ときに render() を呼び出す
+
+    window.addEventListener('resize', onWindowResize, false);
+}
+
+function onWindowResize() {
+    // カメラ設定
+    camera.aspect = window.innerWidth / window.innerHeight; // カメラの縦横比を再設定
+    camera.updateProjectionMatrix(); // 更新
+    renderer.setSize(window.innerWidth, window.innerHeight); // レンダリングサイズを再設定
+}
 
 
 
+function animate() {
+    requestAnimationFrame(animate);
+    camera.rotation.x = beta/30;
+	camera.rotation.y = gamma/30;
+
+	renderer.render(scene, camera);
+}
+
+
+function render() {
+    renderer.render(scene, camera);
+}
