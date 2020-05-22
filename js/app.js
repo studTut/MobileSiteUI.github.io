@@ -6,40 +6,11 @@ var alpha = 0, beta = 0, gamma = 0;
 var line = 200;
 var space = line * 1.1;
 
-// ジャイロセンサーが有効か？
-if(window.DeviceOrientationEvent){
-    // ★iOS13向け: ユーザーにアクセスの許可を求める関数があるか？
-    if(DeviceOrientationEvent.requestPermission){
-        var sensor_contents= document.getElementById("container");
-        // id="sensor_contents" な要素がクリックされたら
-        sensor_contents.addEventListener("click", function(){
-            // ★ジャイロセンサーのアクセス許可をリクエストする
-            DeviceOrientationEvent.requestPermission().then(function(response){
-                // リクエストが許可されたら
-                if(response === "granted"){
-                    // deviceorientationが有効化されるのでaddEventListener
-                    window.addEventListener("deviceorientation", deviceorientationHandler);
-                }
-            }).catch(function(e){
-                console.log(e);
-            });
-        });
-    // iOS13以外
-    }else{
-        // 通常通り、イベントハンドラを追加
-        window.addEventListener("deviceorientation", deviceorientationHandler);
-    }
-}
- 
-// センサーの値を取得＋値が変わるたびにおこなう処理
-function deviceorientationHandler(){
-    // ※※※※※※※※※※※※※※※※
+window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;  // z軸（反時計回り）
     beta  = dat.beta;   // x軸（引き起こす）
     gamma = dat.gamma;  // y軸（右に傾ける）
-    // ※※※※※※※※※※※※※※※※
-}
-
+});
 
 init();
 animate();
@@ -80,36 +51,3 @@ function init() {
 
 
 
-    // CSS3Dレンダラー
-    renderer = new THREE.CSS3DRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight); 
-    renderer.domElement.style.position = 'absolute'; // スタイル設定
-    document.getElementById('container').appendChild(renderer.domElement); //#containerにappend
-    // カメラコントローラー
-    controls = new THREE.TrackballControls(camera, renderer.domElement);
-    controls.rotateSpeed = 0.5; // 感度設定
-    controls.addEventListener('change', render); // 値が変わった（マウスで何か位置が変更された）ときに render() を呼び出す
-
-    window.addEventListener('resize', onWindowResize, false);
-}
-
-function onWindowResize() {
-    // カメラ設定
-    camera.aspect = window.innerWidth / window.innerHeight; // カメラの縦横比を再設定
-    camera.updateProjectionMatrix(); // 更新
-    renderer.setSize(window.innerWidth, window.innerHeight); // レンダリングサイズを再設定
-}
-
-
-
-function animate() {
-    requestAnimationFrame(animate);
-    camera.rotation.x = -20 + beta/30;
-    camera.rotation.y = gamma/30;
-    renderer.render(scene, camera);
-}
-
-
-function render() {
-    renderer.render(scene, camera);
-}
