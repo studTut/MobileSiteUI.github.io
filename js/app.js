@@ -6,39 +6,8 @@ var alpha = 0, beta = 0, gamma = 0;
 var line = 200;
 var space = line * 1.1;
 
-function ClickRequestDeviceSensor(){
-  //. ユーザーに「許可」を求めるダイアログを表示
-  DeviceOrientationEvent.requestPermission().then( function( response ){
-    if( response === 'granted' ){
-      //. 許可された場合のみイベントハンドラを追加できる
-      window.addEventListener( "deviceorientation", deviceOrientation );
-      //. 画面上部のボタンを消す
-      $('#sensorrequest').css( 'display', 'none' );
-    }
-  }).catch( function( dat ){
-    console.log( dat );
-  });
-}
-
-//. DeviceOrientationEvent オブジェクトが有効な環境か？　をチェック
-if( window.DeviceOrientationEvent ){
-  //. iOS13 以上であれば DeviceOrientationEvent.requestPermission 関数が定義されているので、ここで条件分岐
-  if( DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === 'function' ){
-    //. iOS 13 以上の場合、
-    //. 画面上部に「センサーの有効化」ボタンを追加
-    var banner = '<div  style="z-index: 1; position: absolute; width: 100%; background-color: rgb(0, 0, 0);" onclick="ClickRequestDeviceSensor();" id="sensorrequest"><p style="color: rgb(0, 0, 255);">センサーの有効化</p></div>';
-    $('body').prepend( banner );
-  }else{
-    //. Android または iOS 13 未満の場合、
-    //. DeviceOrientationEvent オブジェクトが有効な場合のみ、deviceorientation イベント発生時に deviceOrientaion 関数がハンドリングするよう登録
-    window.addEventListener( "deviceorientation", deviceOrientation );
-  }
-}
-
-
 
 window.addEventListener("deviceorientation", (dat) => {
-    dat.preventDefault();
     
     alpha = dat.alpha;  // z軸（反時計回り）
     beta  = dat.beta;   // x軸（引き起こす）
