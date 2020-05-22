@@ -15,8 +15,8 @@ function ClickRequestDeviceSensor(){
       //. 画面上部のボタンを消す
       $('#sensorrequest').css( 'display', 'none' );
     }
-  }).catch( function( e ){
-    console.log( e );
+  }).catch( function( dat ){
+    console.log( dat );
   });
 }
 
@@ -37,12 +37,12 @@ if( window.DeviceOrientationEvent ){
 
 
 
-window.addEventListener("deviceorientation", (e) => {
-    e.preventDefault();
+window.addEventListener("deviceorientation", (dat) => {
+    dat.preventDefault();
     
-    alpha = e.alpha;  // z軸（反時計回り）
-    beta  = e.beta;   // x軸（引き起こす）
-    gamma = e.gamma;  // y軸（右に傾ける）
+    alpha = dat.alpha;  // z軸（反時計回り）
+    beta  = dat.beta;   // x軸（引き起こす）
+    gamma = dat.gamma;  // y軸（右に傾ける）
 });
 
 init();
