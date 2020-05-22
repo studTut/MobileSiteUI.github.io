@@ -2,16 +2,16 @@ var camera, scene, renderer;
 var controls;
 var object;
 
-//var alpha = 0, beta = 0, gamma = 0;
+var alpha = 0, beta = 0, gamma = 0;
 var line = 200;
 var space = line * 1.1;
 
 
 window.addEventListener("deviceorientation", (dat) => {
     
-    var alpha = dat.alpha;  // z軸（反時計回り）
-    var beta  = dat.beta;   // x軸（引き起こす）
-    var gamma = dat.gamma;  // y軸（右に傾ける）
+    alpha = dat.alpha;  // z軸（反時計回り）
+    beta  = dat.beta;   // x軸（引き起こす）
+    gamma = dat.gamma;  // y軸（右に傾ける）
 });
 
 init();
