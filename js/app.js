@@ -10,7 +10,7 @@ var space = line * 1.1;
 if(window.DeviceOrientationEvent){
     // ★iOS13向け: ユーザーにアクセスの許可を求める関数があるか？
     if(DeviceOrientationEvent.requestPermission){
-        var sensor_contents= document.getElementById("sensor_contents");
+        var sensor_contents= document.getElementById("container");
         // id="sensor_contents" な要素がクリックされたら
         sensor_contents.addEventListener("click", function(){
             // ★ジャイロセンサーのアクセス許可をリクエストする
