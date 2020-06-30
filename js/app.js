@@ -6,11 +6,11 @@ var alpha = 0, beta = 0, gamma = 0;
 var line = 200;
 var space = line * 1.1;
 
-function deviceorientationHandler(){
+window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;  // z軸（反時計回り）
     beta  = dat.beta;   // x軸（引き起こす）
     gamma = dat.gamma;  // y軸（右に傾ける）
-}
+});
 
 init();
 animate();
@@ -19,6 +19,7 @@ animate();
 function init() {
 
     scene = new THREE.Scene();
+
     camera = new THREE.PerspectiveCamera(
         75, 
         window.innerWidth / window.innerHeight, 
@@ -47,7 +48,7 @@ function init() {
     scene.add(object4);
     object4.position.x = space;
     object4.position.y = -1*space;
-    
+
 
 
     // CSS3Dレンダラー
