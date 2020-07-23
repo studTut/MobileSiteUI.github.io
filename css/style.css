@@ -65,7 +65,7 @@ box-shadow:  20px 20px 60px #d99655,
 
 #num5 {
   border-radius; 70px;
-  background: linear-gradient(145deg, #ff5959, #db4b4b);
+  background: red;
   box-shadow:  20px 20px 60px #d99655, 
              -20px -20px 60px #ffcc73;
 }
