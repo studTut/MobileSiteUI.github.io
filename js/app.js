@@ -52,7 +52,7 @@ function init() {
     object5 = new THREE.CSS3DObject(document.getElementById('num5'));
     scene.add(object5);
     object5.position.x = 0;
-    object5.position.y = 0;
+    object5.position.y = 4*space;
     object5.position.z = space;
 
 
