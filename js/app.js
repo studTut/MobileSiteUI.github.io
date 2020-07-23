@@ -84,8 +84,9 @@ function animate() {
 	//camera.rotation.y = gamma/30;
     object5.rotation.x = 30 -1*beta/15;
     object5.rotation.y = -1*gamma/15;
-   if(gamma <= 70) { window.location.href = '../html/page01.html'; }
-
+   if(gamma <= 70) { 
+	   window.location.href = '../html/page01.html'; 
+   }
 	
     renderer.render(scene, camera);
 }
