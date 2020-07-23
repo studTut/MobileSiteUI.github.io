@@ -53,7 +53,7 @@ function init() {
     scene.add(object5);
     object5.position.x = 0;
     object5.position.y = space;
-    object5.position.z = space;
+    object5.position.z = 2*space;
 
 
     // CSS3Dレンダラー
@@ -81,8 +81,8 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate);
     camera.rotation.x = 30 + beta/30;
-	camera.rotation.y = gamma/30;
-	object5.rotation.x = -1*beta/15;
+	//camera.rotation.y = gamma/30;
+	object5.rotation.x = 60 -1*beta/15;
 
 	renderer.render(scene, camera);
 }
