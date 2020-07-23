@@ -53,7 +53,7 @@ function init() {
     scene.add(object5);
     object5.position.x = 0;
     object5.position.y = space;
-    object5.position.z = 2*space;
+    object5.position.z = 3.5*space;
 
 
     // CSS3Dレンダラー
@@ -82,9 +82,10 @@ function animate() {
     requestAnimationFrame(animate);
     camera.rotation.x = 30 + beta/30;
 	//camera.rotation.y = gamma/30;
-	object5.rotation.x = 60 -1*beta/15;
-
-	renderer.render(scene, camera);
+    object5.rotation.x = 30 -1*beta/15;
+    object5.rotate.y = -1*beta/15;
+    
+    renderer.render(scene, camera);
 }
 
 
