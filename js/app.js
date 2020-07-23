@@ -83,9 +83,10 @@ function animate() {
     camera.rotation.x = 30 + beta/30;
 	//camera.rotation.y = gamma/30;
     object5.rotation.x = 30 -1*beta/15;
-    object5.rotation.y = -1*beta/15;
+    object5.rotation.y = -1*gamma/15;
    //if(gamma <= 100) { window.location.href = '../html/page01.html'; }
     //document.write("<h2>gamma,alpha,beta</h2>");
+	
     function displayData() {
     var txt = document.getElementById("txt");   // データを表示するdiv要素の取得
     txt.innerHTML = "alpha: " + alpha + "<br>"  // x軸の値
