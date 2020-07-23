@@ -84,10 +84,10 @@ function animate() {
 	//camera.rotation.y = gamma/30;
     object5.rotation.x = 30 -1*beta/15;
     object5.rotate.y = -1*beta/15;
-    //document.querySelector('#num5').style.backgroundColor = 'red'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(gamma/30,50%,50%)'
 
 	renderer.render(scene, camera);
-
+}
 
 function render() {
     renderer.render(scene, camera);
