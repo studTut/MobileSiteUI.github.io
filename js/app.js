@@ -85,7 +85,13 @@ function animate() {
     object5.rotation.x = 30 -1*beta/15;
     object5.rotation.y = -1*beta/15;
    //if(gamma <= 100) { window.location.href = '../html/page01.html'; }
-    document.write("<h2>gamma,alpha,beta</h2>");
+    //document.write("<h2>gamma,alpha,beta</h2>");
+    function displayData() {
+    var txt = document.getElementById("txt");   // データを表示するdiv要素の取得
+    txt.innerHTML = "alpha: " + alpha + "<br>"  // x軸の値
+                  + "beta:  " + beta  + "<br>"  // y軸の値
+                  + "gamma: " + gamma;          // z軸の値
+}
     renderer.render(scene, camera);
 }
 
