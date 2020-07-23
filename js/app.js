@@ -87,7 +87,7 @@ function animate() {
    if(gamma >= 70) { 
 	   window.location.href = '../html/page01.html'; 
    }
-    document.querySelector('#num5').style.backgroundColor = 'hsl(gamma/30,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(gamma,50%,50%)'
     renderer.render(scene, camera);
 }
 
