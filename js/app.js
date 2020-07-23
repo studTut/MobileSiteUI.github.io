@@ -49,6 +49,11 @@ function init() {
     object4.position.x = space;
     object4.position.y = -1*space;
 
+    object5 = new THREE.CSS3DObject(document.getElementById('num5'));
+    scene.add(object5);
+    object5.position.x = 0;
+    object5.position.y = 0;
+    object5.position.z = space;
 
 
     // CSS3Dレンダラー
@@ -75,9 +80,10 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-    camera.rotation.x = beta/30;
+    camera.rotation.x = 30 + beta/30;
 	camera.rotation.y = gamma/30;
 	object1.rotation.x = beta;
+	object5.rotation.x = beta;
 
 	renderer.render(scene, camera);
 }
