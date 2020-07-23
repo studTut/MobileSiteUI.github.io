@@ -85,7 +85,7 @@ function animate() {
     //object5.rotation.y = -1*gamma/15;
     document.querySelector('#num5').style.backgroundColor = 'hsl(2*gamma,50%,50%)'
 　　document.querySelector('#num5').style.color = 'hsl(-2*gamma,50%,50%)'
-   if(gamma >= 60) { 
+   if(beta >= 70) { 
 	   window.location.href = '../html/page01.html'; 
    }
 
