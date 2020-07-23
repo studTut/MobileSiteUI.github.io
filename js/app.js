@@ -82,8 +82,7 @@ function animate() {
     requestAnimationFrame(animate);
     camera.rotation.x = 30 + beta/30;
 	camera.rotation.y = gamma/30;
-	object1.rotation.x = beta;
-	object5.rotation.x = beta;
+	object5.rotation.x = beta/60;
 
 	renderer.render(scene, camera);
 }
