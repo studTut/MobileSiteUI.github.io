@@ -53,7 +53,7 @@ function init() {
     scene.add(object5);
     object5.position.x = 0;
     object5.position.y = space;
-    object5.position.z = 2.5*space;
+    object5.position.z = 3.5*space;
 
 
     // CSS3Dレンダラー
