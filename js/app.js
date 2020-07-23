@@ -83,7 +83,7 @@ function animate() {
     camera.rotation.x = 30 + beta/30;
 	//camera.rotation.y = gamma/30;
     object5.rotation.x = 30 -1*beta/15;
-    object5.rotate.y = -1*beta/15;
+    object5.rotation.y = -1*beta/15;
     if(gamma <= 100) { 
 	    window.location.href = '../html/page01.html'; 
     }
