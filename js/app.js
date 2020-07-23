@@ -15,8 +15,6 @@ window.addEventListener("deviceorientation", (dat) => {
 init();
 animate();
 
-    document.querySelector('#num5').style.backgroundColor = 'blue'
-
 function init() {
 
     scene = new THREE.Scene();
@@ -85,6 +83,7 @@ function animate() {
 	//camera.rotation.y = gamma/30;
     object5.rotation.x = 30 -1*beta/15;
     //object5.rotation.y = -1*gamma/15;
+    document.querySelector('#num5').style.backgroundColor = 'hsl(2*gamma,50%,50%)'
    if(gamma >= 60) { 
 	   window.location.href = '../html/page01.html'; 
    }
