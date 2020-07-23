@@ -83,8 +83,8 @@ function animate() {
 	//camera.rotation.y = gamma/30;
     object5.rotation.x = 30 -1*beta/15;
     //object5.rotation.y = -1*gamma/15;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(2*gamma,50,50)'
-　　document.querySelector('#num5').style.color = 'hsl(-2*gamma,50,50)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(270,50%,50%)'
+　　document.querySelector('#num5').style.color = 'hsl(90,50%,50%)'
    if(beta >= 70) { 
 	   window.location.href = '../html/page01.html'; 
    }
