@@ -66,12 +66,6 @@ box-shadow:  20px 20px 60px #d99655,
 #num5 {
   border-radius; 70px;
   background: red;
-  box-shadow:  20px 20px 60px #d99655, 
-             -20px -20px 60px #ffcc73;
-  color:white;
-}
-
-.content #num5 a {
   display: block;
   padding: 10px 0;
   text-align: center;
