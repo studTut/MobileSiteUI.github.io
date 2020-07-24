@@ -51,7 +51,7 @@ function init() {
     object5 = new THREE.CSS3DObject(document.getElementById('num5'));
     scene.add(object5);
     object5.position.x = 0;
-    object5.position.y = space/2;
+    object5.position.y = space;
     object5.position.z = 3.5*space;
 
 
