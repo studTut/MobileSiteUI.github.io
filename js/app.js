@@ -81,7 +81,7 @@ function animate() {
     requestAnimationFrame(animate);
     camera.rotation.x = 30 + beta/30;
 	//camera.rotation.y = gamma/30;
-    object5.rotation.x = 30 -1*beta/10;
+    object5.rotation.x = 30 -1*beta/15;
     //object5.rotation.y = -1*gamma/15;
     document.querySelector('#num5').style.backgroundColor = 'hsl(270,50%,50%)'
 
