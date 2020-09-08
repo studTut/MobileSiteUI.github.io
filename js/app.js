@@ -48,11 +48,11 @@ function init() {
     //object4.position.x = space;
     //object4.position.y = -1*space;
 
-    object5 = new THREE.CSS3DObject(document.getElementById('num5'));
-    scene.add(object5);
-    object5.position.x = 0;
-    object5.position.y = 1.5*space;
-    object5.position.z = 3*space;
+    //object5 = new THREE.CSS3DObject(document.getElementById('num5'));
+    //scene.add(object5);
+    //object5.position.x = 0;
+    //object5.position.y = 1.5*space;
+    //object5.position.z = 3*space;
 
 
     // CSS3Dレンダラー
