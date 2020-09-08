@@ -48,16 +48,16 @@ function init() {
     //object4.position.x = space;
     //object4.position.y = -1*space;
 
-    //object5 = new THREE.CSS3DObject(document.getElementById('num5'));
-    //scene.add(object5);
-    //object5.position.x = 0;
-    //object5.position.y = 1.5*space;
-    //object5.position.z = 3*space;
+    object5 = new THREE.CSS3DObject(document.getElementById('num5'));
+    scene.add(object5);
+    object5.position.x = 0;
+    object5.position.y = 1.5*space;
+    object5.position.z = 3*space;
 
 
     // CSS3Dレンダラー
     renderer = new THREE.CSS3DRenderer();
-    renderer.setSize(window.innerWidth/2, window.innerHeight/2); 
+    renderer.setSize(window.innerWidth, window.innerHeight); 
     renderer.domElement.style.position = 'absolute'; // スタイル設定
     document.getElementById('container').appendChild(renderer.domElement); //#containerにappend
     // カメラコントローラー
