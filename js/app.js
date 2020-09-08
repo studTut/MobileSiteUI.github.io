@@ -57,7 +57,7 @@ function init() {
 
     // CSS3Dレンダラー
     renderer = new THREE.CSS3DRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight); 
+    renderer.setSize(window.innerWidth/2, window.innerHeight/2); 
     renderer.domElement.style.position = 'absolute'; // スタイル設定
     document.getElementById('container').appendChild(renderer.domElement); //#containerにappend
     // カメラコントローラー
