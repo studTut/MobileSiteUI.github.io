@@ -83,7 +83,7 @@ function init() {
     object6.position.x = 0;
     object6.position.y = 0;
     object6.position.z = space;
-    object6.rotation.x = 180;
+    object6.rotation.x = 90;
 
 
     // CSS3Dレンダラー
