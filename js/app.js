@@ -111,7 +111,7 @@ function animate() {
     camera.rotation.x = 30 + beta/30;
     object6.rotation.x = 30 + beta/30;
 	//camera.rotation.y = gamma/30;
-    if(beta <= 65) {
+    if(beta <= 50) {
     object5.rotation.x = 30 -1*beta/15;
     } else {
 	    object5.rotation.x = 26;
