@@ -78,12 +78,13 @@ function init() {
     object5.position.y = 1.5*space;
     object5.position.z = 3*space;
     
-    object6 = new THREE.CSS3DObject(document.getElementById('html'));
+    object6 = new THREE.CSS3DObject(document.getElementById('text'));
     scene.add(object6);
     object6.position.x = 0;
     object6.position.y = 0;
     object6.position.z = space;
     object6.rotation.x = 90;
+	object6.rotation.z = 90;
 
 
     // CSS3Dレンダラー
