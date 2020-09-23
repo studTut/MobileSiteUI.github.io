@@ -25,8 +25,9 @@ function setSwipe(elem) {
         e.preventDefault();
         moveY = e.changedTouches[0].pageY;
 	move = -1 * startY - moveY;
-	scroll += move;
+	
     });
+	scroll += move;
 }
 
 window.addEventListener("deviceorientation", (dat) => {
@@ -80,8 +81,9 @@ function init() {
     object6 = new THREE.CSS3DObject(document.getElementById('html'));
     scene.add(object6);
     object6.position.x = 0;
-    object6.position.y = space;
-    object6.position.z = 3*space;
+    object6.position.y = 0;
+    object6.position.z = space;
+    object6.rotation.x = 180;
 
 
     // CSS3Dレンダラー
