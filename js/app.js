@@ -5,6 +5,29 @@ var object;
 var alpha = 0, beta = 0, gamma = 0;
 var line = 200;
 var space = line * 1.1;
+var move;
+var scroll;
+
+function setSwipe(elem) {
+    let t = document.querySelector(elem);
+    let startY;        // タッチ開始 y座標
+    let moveY;    // スワイプ中の y座標
+    let dist = 10;    // スワイプを感知する最低距離（ピクセル単位）
+     
+    // タッチ開始時： xy座標を取得
+    t.addEventListener("touchstart", function(e) {
+        e.preventDefault();
+        startY = e.touches[0].pageY;
+    });
+     
+    // スワイプ中： xy座標を取得
+    t.addEventListener("touchmove", function(e) {
+        e.preventDefault();
+        moveY = e.changedTouches[0].pageY;
+	move = -1 * startY - moveY;
+	scroll += move;
+    });
+}
 
 window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;  // z軸（反時計回り）
@@ -53,6 +76,9 @@ function init() {
     object5.position.x = 0;
     object5.position.y = 1.5*space;
     object5.position.z = 3*space;
+    
+    object6 = new THREE.CSS3DObject(document.getElementById('html'));
+    scene.add(object6);
 
 
     // CSS3Dレンダラー
@@ -87,6 +113,7 @@ function animate() {
 	    object5.rotation.x = 26;
     }
     //object5.rotation.y = -1*gamma/15;
+    object6.position.y = scroll;
     document.querySelector('#num5').style.backgroundColor = 'hsl(270,50%,50%)'
 
     renderer.render(scene, camera);
