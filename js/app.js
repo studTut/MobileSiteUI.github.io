@@ -76,7 +76,7 @@ function init() {
     scene.add(object5);
     object5.position.x = 0;
     object5.position.y = 1.5*space;
-    object5.position.z = 3*space;
+    object5.position.z = 4*space;
     
     object6 = new THREE.CSS3DObject(document.getElementById('text'));
     scene.add(object6);
