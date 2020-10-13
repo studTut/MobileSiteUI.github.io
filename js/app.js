@@ -111,9 +111,10 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-    camera.rotation.x = 30 + beta/30;
+    //camera.rotation.x = 30 + beta/30;
     //object6.rotation.x = 30 + beta/30;
-	//camera.rotation.y = gamma/30;
+    //camera.rotation.y = gamma/30;
+    object5.position.y -= beta/30;
     if(beta <= 50) {
     object5.rotation.x = 30 -1*beta/15;
     } else {
