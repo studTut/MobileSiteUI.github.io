@@ -112,7 +112,7 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate);
     camera.rotation.x = 30 + beta/30;
-    object6.rotation.x = 30 + beta/30;
+    //object6.rotation.x = 30 + beta/30;
 	//camera.rotation.y = gamma/30;
     if(beta <= 50) {
     object5.rotation.x = 30 -1*beta/15;
@@ -120,7 +120,7 @@ function animate() {
 	    object5.rotation.x = 26;
     }
     //object5.rotation.y = -1*gamma/15;
-    object6.position.y += scroll;
+    //object6.position.y += scroll;
     document.querySelector('#num5').style.backgroundColor = 'hsl(270,50%,50%)'
 
     renderer.render(scene, camera);
