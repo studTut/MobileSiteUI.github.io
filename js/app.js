@@ -117,9 +117,9 @@ function animate() {
     //object5.position.y -= beta/30;
     if(beta <= 50) {
     object5.rotation.x = 30 -1*beta/15;
-    object5.position.y = 10;
+    object5.position.y = 100;
     } else {
-	    object5.rotation.x = 26;
+	    object5.rotation.x = 0;
 	    object5.position.y = 0;
     }
     //object5.rotation.y = -1*gamma/15;
