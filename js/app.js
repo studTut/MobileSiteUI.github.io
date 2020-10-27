@@ -116,7 +116,7 @@ function animate() {
     //camera.rotation.y = gamma/30;
     //object5.position.y -= beta/30;
     if(beta <= 50) {
-    object5.rotation.x = 55 -1*beta/10;
+    object5.rotation.x = 52 -1*beta/10;
     object5.position.y = 2000 -2000*beta/50;
     } else {
 	    object5.rotation.x = 0;
@@ -124,7 +124,7 @@ function animate() {
     }
     //object5.rotation.y = -1*gamma/15;
     object6.position.y = -1*scroll;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(150,50%,50%)'
 
     renderer.render(scene, camera);
 }
