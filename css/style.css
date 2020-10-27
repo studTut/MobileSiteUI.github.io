@@ -87,3 +87,7 @@ box-shadow:  20px 20px 60px #d99655,
 #text {
   font-size:22px;
 }
+
+#text a{
+  font-size:40px;
+}
