@@ -123,7 +123,7 @@ function animate() {
 	    object5.position.y = 0;
     }
     //object5.rotation.y = -1*gamma/15;
-    object6.position.y += 1;
+    object6.position.y = scroll;
     document.querySelector('#num5').style.backgroundColor = 'hsl(190,50%,50%)'
 
     renderer.render(scene, camera);
