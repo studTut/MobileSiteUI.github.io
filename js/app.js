@@ -116,7 +116,7 @@ function animate() {
     //camera.rotation.y = gamma/30;
     //object5.position.y -= beta/30;
     if(beta <= 50) {
-    object5.rotation.x = 50 -1*beta/25;
+    object5.rotation.x = 50 -1*beta/10;
     object5.position.y = 1500 -1500*beta/50;
     } else {
 	    object5.rotation.x = 0;
