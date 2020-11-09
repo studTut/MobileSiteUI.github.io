@@ -104,10 +104,10 @@ function init() {
  * 次の番号を表示
  */
 function next(){
-	object6.position.x += 0.1;
+	object6.position.x += 1;
 }
 function previous(){
-	object6.position.x -= 0.1;
+	object6.position.x -= 1;
 }
 /*
  * 起動時の処理
@@ -154,7 +154,7 @@ function animate() {
     }
     //object5.rotation.y = -1*gamma/15;
     //object6.position.y = scroll;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(190,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
 
     renderer.render(scene, camera);
 }
