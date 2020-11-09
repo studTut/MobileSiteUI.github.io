@@ -9,6 +9,7 @@ var move;
 var scroll;
 var no;				// 数値格納用
 var number;
+var posY = 0;
 
 
 
@@ -63,7 +64,7 @@ function init() {
     object6 = new THREE.CSS3DObject(document.getElementById('text'));
     scene.add(object6);
     object6.position.x = 0;
-    object6.position.y = 0;
+    object6.position.y = posY;
     object6.position.z = 0;
    // object6.rotation.x = 90;
 	//object6.rotation.z = 90;
@@ -74,7 +75,7 @@ function init() {
 	let startY;		// タッチ開始 y座標
 	let moveX;	// スワイプ中の x座標
 	let moveY;	// スワイプ中の y座標
-	let dist = 10;	// スワイプを感知する最低距離（ピクセル単位）
+	let dist = 1;	// スワイプを感知する最低距離（ピクセル単位）
 	
 	// タッチ開始時： xy座標を取得
 	t.addEventListener("touchstart", function(e) {
@@ -92,23 +93,15 @@ function init() {
 	
 	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
 	t.addEventListener("touchend", function(e) {
-		if (startX > moveX && startX > moveX + dist) {		// 右から左にスワイプ
-			previous();
+		if (startY > moveY && startY > moveY + dist) {		// 下から上スワイプ
+			posY -= startY - moveY;
 		}
-		else if (startX < moveX && startX + dist < moveX) {	// 左から右にスワイプ
-			next();
+		else if (startY < moveY && startY + dist < moveY) {	// 上から下にスワイプ
+			posY += startY - moveY;
 		}
 	});
 }
-/*
- * 次の番号を表示
- */
-function next(){
-	object6.position.x += 1;
-}
-function previous(){
-	object6.position.x -= 1;
-}
+
 /*
  * 起動時の処理
  */
@@ -154,7 +147,7 @@ function animate() {
     }
     //object5.rotation.y = -1*gamma/15;
     //object6.position.y = scroll;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
 
     renderer.render(scene, camera);
 }
