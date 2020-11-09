@@ -7,28 +7,10 @@ var line = 200;
 var space = line * 1.1;
 var move;
 var scroll;
+var no;				// 数値格納用
+var number;
 
-function setSwipe(elem) {
-    let t = document.querySelector(elem);
-    let startY;        // タッチ開始 y座標
-    let moveY;    // スワイプ中の y座標
-    let dist = 10;    // スワイプを感知する最低距離（ピクセル単位）
-     
-    // タッチ開始時： xy座標を取得
-    t.addEventListener("touchstart", function(e) {
-        e.preventDefault();
-        startY = e.touches[0].pageY;
-    });
-     
-    // スワイプ中： xy座標を取得
-    t.addEventListener("touchmove", function(e) {
-        e.preventDefault();
-        moveY = e.changedTouches[0].pageY;
-	move = -1 * startY - moveY;
-	
-    });
-	scroll += move;
-}
+
 
 window.addEventListener("deviceorientation", (dat) => {
     alpha = dat.alpha;  // z軸（反時計回り）
@@ -86,6 +68,54 @@ function init() {
    // object6.rotation.x = 90;
 	//object6.rotation.z = 90;
 
+	function setSwipe(elem) {
+	let t = document.querySelector(elem);
+	let startX;		// タッチ開始 x座標
+	let startY;		// タッチ開始 y座標
+	let moveX;	// スワイプ中の x座標
+	let moveY;	// スワイプ中の y座標
+	let dist = 10;	// スワイプを感知する最低距離（ピクセル単位）
+	
+	// タッチ開始時： xy座標を取得
+	t.addEventListener("touchstart", function(e) {
+		e.preventDefault();
+		startX = e.touches[0].pageX;
+		startY = e.touches[0].pageY;
+	});
+	
+	// スワイプ中： xy座標を取得
+	t.addEventListener("touchmove", function(e) {
+		e.preventDefault();
+		moveX = e.changedTouches[0].pageX;
+		moveY = e.changedTouches[0].pageY;
+	});
+	
+	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
+	t.addEventListener("touchend", function(e) {
+		if (startX > moveX && startX > moveX + dist) {		// 右から左にスワイプ
+			previous();
+		}
+		else if (startX < moveX && startX + dist < moveX) {	// 左から右にスワイプ
+			next();
+		}
+	});
+}
+/*
+ * 次の番号を表示
+ */
+function next(){
+	object6.position.x += 0.1;
+}
+function previous(){
+	object6.position.x -= 0.1;
+}
+/*
+ * 起動時の処理
+ */
+window.addEventListener("load", function(){
+	// スワイプイベント設定
+	setSwipe("#container");
+});
 
     // CSS3Dレンダラー
     renderer = new THREE.CSS3DRenderer();
