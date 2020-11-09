@@ -64,7 +64,7 @@ function init() {
     object6 = new THREE.CSS3DObject(document.getElementById('text'));
     scene.add(object6);
     object6.position.x = 0;
-    object6.position.y = posY;
+    object6.position.y = 0;
     object6.position.z = 0;
    // object6.rotation.x = 90;
 	//object6.rotation.z = 90;
@@ -146,7 +146,7 @@ function animate() {
 	    object5.position.y = 0;
     }
     //object5.rotation.y = -1*gamma/15;
-    //object6.position.y = scroll;
+    object6.position.y = posY;
     document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
 
     renderer.render(scene, camera);
