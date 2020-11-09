@@ -104,11 +104,12 @@ function init() {
 
 /*
  * 起動時の処理
- */
-window.addEventListener("load", function(){
+ window.addEventListener("load", function(){
 	// スワイプイベント設定
 	setSwipe("#container");
 });
+ */
+
 
     // CSS3Dレンダラー
     renderer = new THREE.CSS3DRenderer();
