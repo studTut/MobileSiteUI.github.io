@@ -75,7 +75,7 @@ function init() {
 	let startY;		// タッチ開始 y座標
 	let moveX;	// スワイプ中の x座標
 	let moveY;	// スワイプ中の y座標
-	let dist = 1;	// スワイプを感知する最低距離（ピクセル単位）
+	let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
 	
 	// タッチ開始時： xy座標を取得
 	t.addEventListener("touchstart", function(e) {
