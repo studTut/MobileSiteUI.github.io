@@ -69,7 +69,7 @@ function init() {
    // object6.rotation.x = 90;
 	//object6.rotation.z = 90;
 
-	function setSwipe(elem) {
+function setSwipe(elem) {
 	let t = document.querySelector(elem);
 	let startX;		// タッチ開始 x座標
 	let startY;		// タッチ開始 y座標
@@ -93,10 +93,10 @@ function init() {
 	
 	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
 	t.addEventListener("touchend", function(e) {
-		if (startY > moveY && startY > moveY + dist) {		// 下から上スワイプ
+		if (startX > moveX && startX > moveX + dist) {		// 右から左にスワイプ
 			previous();
 		}
-		else if (startY < moveY && startY + dist < moveY) {	// 上から下にスワイプ
+		else if (startX < moveX && startX + dist < moveX) {	// 左から右にスワイプ
 			next();
 		}
 	});
