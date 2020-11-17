@@ -67,60 +67,7 @@ function init() {
     object6.position.y = 0;
     object6.position.z = 0;
 
-function setSwipe(elem) {
-	let t = document.querySelector(elem);
-	let startX;		// タッチ開始 x座標
-	let startY;		// タッチ開始 y座標
-	let moveX;	// スワイプ中の x座標
-	let moveY;	// スワイプ中の y座標
-	let dist = 10;	// スワイプを感知する最低距離（ピクセル単位）
-	
-	// タッチ開始時： xy座標を取得
-	t.addEventListener("touchstart", function(e) {
-		e.preventDefault();
-		startX = e.touches[0].pageX;
-		startY = e.touches[0].pageY;
-	});
-	
-	// スワイプ中： xy座標を取得
-	t.addEventListener("touchmove", function(e) {
-		e.preventDefault();
-		moveX = e.changedTouches[0].pageX;
-		moveY = e.changedTouches[0].pageY;
-	});
-	
-	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
-	t.addEventListener("touchend", function(e) {
-		if (startX > moveX && startX > moveX + dist) {		// 右から左にスワイプ
-			previous();
-		}
-		else if (startX < moveX && startX + dist < moveX) {	// 左から右にスワイプ
-			next();
-		}
-	});
-}
-function next(){
-	no ++;
-	setNumber();
-}
 
-/*
- * 前の番号を表示
- */
-function previous(){
-	no --;
-	setNumber();
-}
-
-/*
- * 数値を画面に表示する
- */
-function setNumber(){
-	number.innerHTML = no;
-}
-/*
- * 起動時の処理
- */
 
 
 
@@ -145,6 +92,62 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight); // レンダリングサイズを再設定
 }
 
+function setSwipe(elem) {
+	let t = document.querySelector(elem);
+	let startX;		// タッチ開始 x座標
+	let startY;		// タッチ開始 y座標
+	let moveX;	// スワイプ中の x座標
+	let moveY;	// スワイプ中の y座標
+	let dist = 10;	// スワイプを感知する最低距離（ピクセル単位）
+	
+	// タッチ開始時： xy座標を取得
+	t.addEventListener("touchstart", function(e) {
+		e.preventDefault();
+		startX = e.touches[0].pageX;
+		startY = e.touches[0].pageY;
+	});
+	
+	// スワイプ中： xy座標を取得
+	t.addEventListener("touchmove", function(e) {
+		e.preventDefault();
+		moveX = e.changedTouches[0].pageX;
+		moveY = e.changedTouches[0].pageY;
+	});
+	
+	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
+	t.addEventListener("touchend", function(e) {
+		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
+			previous();
+		}
+		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
+			next();
+		}
+	});
+}
+function next(){
+	no ++;
+	posY ++;
+	setNumber();
+}
+
+/*
+ * 前の番号を表示
+ */
+function previous(){
+	no --;
+	posY --;
+	setNumber();
+}
+
+/*
+ * 数値を画面に表示する
+ */
+function setNumber(){
+	number.innerHTML = no;
+}
+/*
+ * 起動時の処理
+ */
 
 window.addEventListener("load", function(){
 	// 数値表示部分のDOM取得
@@ -169,8 +172,8 @@ function animate() {
 	    object5.position.y = 0;
     }
 
-    object6.position.y += 0;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+    object6.position.y += posY;
+    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
 
     renderer.render(scene, camera);
 }
