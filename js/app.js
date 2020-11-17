@@ -124,17 +124,6 @@ function setNumber(){
  * 起動時の処理
  */
 
-window.addEventListener("load", function(){
-	// 数値表示部分のDOM取得
-	number = document.getElementById("number");
-	
-	// 数値を画面に表示
-	no = 0;
-	setNumber();
-
-	// スワイプイベント設定
-	setSwipe("#scroll");
-});
 
 
 
@@ -175,7 +164,7 @@ function animate() {
     }
     //object5.rotation.y = -1*gamma/15;
     object6.position.y += number;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(120,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(1,50%,50%)'
 
     renderer.render(scene, camera);
 }
@@ -184,4 +173,17 @@ function animate() {
 function render() {
     renderer.render(scene, camera);
 }
+
+window.addEventListener("load", function(){
+	// 数値表示部分のDOM取得
+	number = document.getElementById("number");
+	
+	// 数値を画面に表示
+	no = 0;
+	setNumber();
+
+	// スワイプイベント設定
+	setSwipe("#scroll");
+});
+
 
