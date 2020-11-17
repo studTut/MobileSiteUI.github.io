@@ -93,7 +93,7 @@ function init() {
 	setNumber();
 
 	// スワイプイベント設定
-	setSwipe("#text");
+	setSwipe("#container");
 });
 }
 
@@ -117,8 +117,8 @@ function animate() {
 	    object5.position.y = 0;
     }
 
-    object6.position.y += posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
+    object6.position.y = posY;
+    document.querySelector('#num5').style.backgroundColor = 'hsl(120,50%,50%)'
 
     renderer.render(scene, camera);
 }
@@ -134,7 +134,7 @@ function setSwipe(elem) {
 	let startY;		// タッチ開始 y座標
 	let moveX;	// スワイプ中の x座標
 	let moveY;	// スワイプ中の y座標
-	let dist = 10;	// スワイプを感知する最低距離（ピクセル単位）
+	let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
 	
 	// タッチ開始時： xy座標を取得
 	t.addEventListener("touchstart", function(e) {
@@ -154,15 +154,16 @@ function setSwipe(elem) {
 	t.addEventListener("touchend", function(e) {
 		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
 			previous();
+			posY -= startY - moveY;  
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
 			next();
+			posY += moveY startY;
 		}
 	});
 }
 function next(){
-	no ++;
-	posY ++;
+	no = posY;
 	setNumber();
 }
 
@@ -170,8 +171,7 @@ function next(){
  * 前の番号を表示
  */
 function previous(){
-	no --;
-	posY --;
+	no = posY;
 	setNumber();
 }
 
