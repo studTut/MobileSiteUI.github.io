@@ -93,7 +93,7 @@ function init() {
 	setNumber();
 
 	// スワイプイベント設定
-	setSwipe("#container");
+	setSwipe("#scroll");
 });
 }
 
