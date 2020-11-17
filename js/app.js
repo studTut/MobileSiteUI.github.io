@@ -175,7 +175,7 @@ function animate() {
     }
     //object5.rotation.y = -1*gamma/15;
     object6.position.y += 1;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(200,50%,50%)'
 
     renderer.render(scene, camera);
 }
