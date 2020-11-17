@@ -7,7 +7,7 @@ var line = 200;
 var space = line * 1.1;
 var move;
 var scroll;
-var no;				// 数値格納用
+var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
 var posY = 0;
 
@@ -75,7 +75,7 @@ function setSwipe(elem) {
 	let startY;		// タッチ開始 y座標
 	let moveX;	// スワイプ中の x座標
 	let moveY;	// スワイプ中の y座標
-	let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
+	let dist = 10;	// スワイプを感知する最低距離（ピクセル単位）
 	
 	// タッチ開始時： xy座標を取得
 	t.addEventListener("touchstart", function(e) {
@@ -174,8 +174,8 @@ function animate() {
 	    object5.position.y = 0;
     }
     //object5.rotation.y = -1*gamma/15;
-    object6.position.y += 1;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(200,50%,50%)'
+    object6.position.y += number;
+    document.querySelector('#num5').style.backgroundColor = 'hsl(120,50%,50%)'
 
     renderer.render(scene, camera);
 }
