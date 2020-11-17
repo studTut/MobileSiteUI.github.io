@@ -8,7 +8,7 @@ var space = line * 1.1;
 var move;
 var scroll;
 var no;				// 数値格納用
-var number;
+var number;			// 数値表示部分のDOM取得用
 var posY = 0;
 
 
@@ -94,20 +94,34 @@ function init() {
 	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
 	t.addEventListener("touchend", function(e) {
 		if (startY > moveY && startY > moveY + dist) {		// 下から上スワイプ
-			posY -= 5;
+			previous();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 上から下にスワイプ
-			posY += 5;
+			next();
 		}
 	});
 }
+function next(){
+	no ++;
+	setNumber();
+}
 
 /*
+ * 前の番号を表示
+ */
+function previous(){
+	no --;
+	setNumber();
+}
+
+/*
+ * 数値を画面に表示する
+ */
+function setNumber(){
+	number.innerHTML = no;
+}
+/*
  * 起動時の処理
-  window.addEventListener("load", function(){
-	// スワイプイベント設定
-	setSwipe("#container");
-	});
  */
 	
 
@@ -150,7 +164,7 @@ function animate() {
     }
     //object5.rotation.y = -1*gamma/15;
     object6.position.y += posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
 
     renderer.render(scene, camera);
 }
@@ -159,3 +173,15 @@ function animate() {
 function render() {
     renderer.render(scene, camera);
 }
+
+window.addEventListener("load", function(){
+	// 数値表示部分のDOM取得
+	number = document.getElementById("number");
+	
+	// 数値を画面に表示
+	no = 0;
+	setNumber();
+
+	// スワイプイベント設定
+	setSwipe("#scroll");
+});
