@@ -66,8 +66,6 @@ function init() {
     object6.position.x = 0;
     object6.position.y = 0;
     object6.position.z = 0;
-   // object6.rotation.x = 90;
-	//object6.rotation.z = 90;
 
 function setSwipe(elem) {
 	let t = document.querySelector(elem);
@@ -148,32 +146,6 @@ function onWindowResize() {
 }
 
 
-
-function animate() {
-    requestAnimationFrame(animate);
-    //camera.rotation.x = 30 + beta/30;
-    //object6.rotation.x = 30 + beta/30;
-    //camera.rotation.y = gamma/30;
-    //object5.position.y -= beta/30;
-    if(beta <= 50) {
-    object5.rotation.x = 5 -1*beta/10;
-    object5.position.y = 2000 -2000*beta/50;
-    } else {
-	    object5.rotation.x = 0;
-	    object5.position.y = 0;
-    }
-    //object5.rotation.y = -1*gamma/15;
-    object6.position.y += number;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(1,50%,50%)'
-
-    renderer.render(scene, camera);
-}
-
-
-function render() {
-    renderer.render(scene, camera);
-}
-
 window.addEventListener("load", function(){
 	// 数値表示部分のDOM取得
 	number = document.getElementById("number");
@@ -185,5 +157,28 @@ window.addEventListener("load", function(){
 	// スワイプイベント設定
 	setSwipe("#scroll");
 });
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    if(beta <= 50) {
+    object5.rotation.x = 5 -1*beta/10;
+    object5.position.y = 2000 -2000*beta/50;
+    } else {
+	    object5.rotation.x = 0;
+	    object5.position.y = 0;
+    }
+
+    object6.position.y += number;
+    document.querySelector('#num5').style.backgroundColor = 'hsl(1,50%,50%)'
+
+    renderer.render(scene, camera);
+}
+
+
+function render() {
+    renderer.render(scene, camera);
+}
+
 
 
