@@ -83,6 +83,18 @@ function init() {
     controls.addEventListener('change', render); // 値が変わった（マウスで何か位置が変更された）ときに render() を呼び出す
 
     window.addEventListener('resize', onWindowResize, false);
+	
+	window.addEventListener("load", function(){
+	// 数値表示部分のDOM取得
+	number = document.getElementById("number");
+	
+	// 数値を画面に表示
+	no = 0;
+	setNumber();
+
+	// スワイプイベント設定
+	setSwipe("#text");
+});
 }
 
 function onWindowResize() {
@@ -106,7 +118,7 @@ function animate() {
     }
 
     object6.position.y += posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
 
     renderer.render(scene, camera);
 }
@@ -173,15 +185,5 @@ function setNumber(){
  * 起動時の処理
  */
 
-window.addEventListener("load", function(){
-	// 数値表示部分のDOM取得
-	number = document.getElementById("number");
-	
-	// 数値を画面に表示
-	no = 0;
-	setNumber();
 
-	// スワイプイベント設定
-	setSwipe("#scroll");
-});
 
