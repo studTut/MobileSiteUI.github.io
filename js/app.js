@@ -104,11 +104,13 @@ function init() {
 
 /*
  * 起動時の処理
- */
-	 window.addEventListener("load", function(){
+  window.addEventListener("load", function(){
 	// スワイプイベント設定
 	setSwipe("#container");
-});
+	});
+ */
+	
+
 
 
     // CSS3Dレンダラー
@@ -148,7 +150,7 @@ function animate() {
     }
     //object5.rotation.y = -1*gamma/15;
     object6.position.y = posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(,50%,50%)'
 
     renderer.render(scene, camera);
 }
