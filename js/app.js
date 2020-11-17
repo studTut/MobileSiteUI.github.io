@@ -148,11 +148,11 @@ function setSwipe(elem) {
 		moveX = e.changedTouches[0].pageX;
 		moveY = e.changedTouches[0].pageY;
 		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
-			posY += 0.01*(startY - moveY); 
+			posY += 0.05*(startY - moveY); 
 			previous();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
-			posY -= 0.01*(moveY - startY);
+			posY -= 0.05*(moveY - startY);
 			next();
 		}
 	});
