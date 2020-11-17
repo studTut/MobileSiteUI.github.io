@@ -92,6 +92,30 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight); // レンダリングサイズを再設定
 }
 
+
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    if(beta <= 50) {
+    object5.rotation.x = 5 -1*beta/10;
+    object5.position.y = 2000 -2000*beta/50;
+    } else {
+	    object5.rotation.x = 0;
+	    object5.position.y = 0;
+    }
+
+    object6.position.y += posY;
+    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+
+    renderer.render(scene, camera);
+}
+
+
+function render() {
+    renderer.render(scene, camera);
+}
+
 function setSwipe(elem) {
 	let t = document.querySelector(elem);
 	let startX;		// タッチ開始 x座標
@@ -160,28 +184,4 @@ window.addEventListener("load", function(){
 	// スワイプイベント設定
 	setSwipe("#scroll");
 });
-
-function animate() {
-    requestAnimationFrame(animate);
-
-    if(beta <= 50) {
-    object5.rotation.x = 5 -1*beta/10;
-    object5.position.y = 2000 -2000*beta/50;
-    } else {
-	    object5.rotation.x = 0;
-	    object5.position.y = 0;
-    }
-
-    object6.position.y += posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
-
-    renderer.render(scene, camera);
-}
-
-
-function render() {
-    renderer.render(scene, camera);
-}
-
-
 
