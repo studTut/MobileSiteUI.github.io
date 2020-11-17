@@ -117,7 +117,7 @@ function animate() {
     }
 
     object6.position.y = posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
 
     renderer.render(scene, camera);
 }
@@ -147,19 +147,29 @@ function setSwipe(elem) {
 		e.preventDefault();
 		moveX = e.changedTouches[0].pageX;
 		moveY = e.changedTouches[0].pageY;
-	});
-	
-	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
-	t.addEventListener("touchend", function(e) {
 		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
-			posY -= startY - moveY; 
+			posY += startY - moveY; 
 			previous();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
-			posY += moveY - startY;
+			posY -= moveY - startY;
 			next();
 		}
 	});
+	
+	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
+	/*
+	t.addEventListener("touchend", function(e) {
+		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
+			posY += startY - moveY; 
+			previous();
+		}
+		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
+			posY -= moveY - startY;
+			next();
+		}
+	});
+	*/
 }
 function next(){
 	no = posY;
