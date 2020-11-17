@@ -6,7 +6,6 @@ var alpha = 0, beta = 0, gamma = 0;
 var line = 200;
 var space = line * 1.1;
 var move;
-var scroll;
 var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
 var posY = 0;
@@ -93,7 +92,7 @@ function init() {
 	setNumber();
 
 	// スワイプイベント設定
-	setSwipe("#scroll");
+	setSwipe("#text");
 });
 }
 
@@ -118,7 +117,7 @@ function animate() {
     }
 
     object6.position.y = posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(200,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
 
     renderer.render(scene, camera);
 }
