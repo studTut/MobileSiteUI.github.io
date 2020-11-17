@@ -169,7 +169,7 @@ function animate() {
 	    object5.position.y = 0;
     }
 
-    object6.position.y += number;
+    object6.position.y += 0;
     document.querySelector('#num5').style.backgroundColor = 'hsl(120,50%,50%)'
 
     renderer.render(scene, camera);
