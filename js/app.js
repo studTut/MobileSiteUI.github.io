@@ -118,7 +118,7 @@ function animate() {
     }
 
     object6.position.y = posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(120,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(200,50%,50%)'
 
     renderer.render(scene, camera);
 }
@@ -153,12 +153,12 @@ function setSwipe(elem) {
 	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
 	t.addEventListener("touchend", function(e) {
 		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
+			posY -= startY - moveY; 
 			previous();
-			posY -= startY - moveY;  
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
+			posY += moveY - startY;
 			next();
-			posY += moveY startY;
 		}
 	});
 }
