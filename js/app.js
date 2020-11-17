@@ -94,10 +94,10 @@ function init() {
 	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
 	t.addEventListener("touchend", function(e) {
 		if (startY > moveY && startY > moveY + dist) {		// 下から上スワイプ
-			posY -= startY - moveY;
+			posY -= 5;
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 上から下にスワイプ
-			posY += moveY - startY;
+			posY += 5;
 		}
 	});
 }
@@ -149,8 +149,8 @@ function animate() {
 	    object5.position.y = 0;
     }
     //object5.rotation.y = -1*gamma/15;
-    object6.position.y += 1;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(200,50%,50%)'
+    object6.position.y += posY;
+    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
 
     renderer.render(scene, camera);
 }
