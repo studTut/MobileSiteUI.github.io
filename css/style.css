@@ -37,7 +37,9 @@ body {
   height: 300px;
   text-align: center;
   font-size:50px;
-  list-style: none;
+  }
+.content li{
+  list-style:none;
 }
 
 #num1 {
