@@ -181,16 +181,14 @@ function next(){
  */
 function previous(){
 	no = Math.round(posY);
-	setNumber();
+	//setNumber();
 }
 
 /*
  * 数値を画面に表示する
- */
 function setNumber(){
 	number.innerHTML = no;
 }
-/*
  * 起動時の処理
  */
 
