@@ -7,12 +7,6 @@ body {
   margin: 0;
   overflow: hidden;
 }
-p {
-    text-align: center;
-}
-#num {
-    font-size: 200px;
-}
 
 
 #text {
