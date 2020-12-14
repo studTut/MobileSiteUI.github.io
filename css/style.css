@@ -10,8 +10,8 @@ body {
 
 
 #text {
-  font-size:22px;
-
+  text-align:center;
+}
 #num {
   font-size:200px;
 }
