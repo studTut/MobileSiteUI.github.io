@@ -58,13 +58,13 @@ function init() {
     scene.add(object5);
     object5.position.x = 0;
     object5.position.y = 1.5*space;
-    object5.position.z = 3*space;
+    object5.position.z = 2*space;
     
     object6 = new THREE.CSS3DObject(document.getElementById('text'));
     scene.add(object6);
     object6.position.x = 0;
-    object6.position.y = -1*3*space;
-    object6.position.z = 2*space;
+    object6.position.y = -3000;
+    object6.position.z = 1*space;
 
 
 
