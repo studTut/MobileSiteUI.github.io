@@ -9,8 +9,19 @@ body {
 }
 p {
     text-align: center;
+}
+#num {
     font-size: 200px;
 }
+
+
+#text {
+  font-size:22px;
+
+#number {
+  font-size:100px;
+}
+
 .instructor {
     text-align: center;
     font-size: 20px;
@@ -45,6 +56,11 @@ box-shadow:  20px 20px 60px #7dbbd9,
   text-decoration: none;
   color:white;
 }
+
+
+
+
+
 
 #num2 {
 border-radius: 50px;
@@ -98,16 +114,4 @@ box-shadow:  20px 20px 60px #d99655,
   font-size:40px;
   text-decoration: none;
   color:white;
-}
-
-#text {
-  font-size:22px;
-}
-
-#text a{
-  font-size:40px;
-}
-
-#number {
-  font-size:100px;
 }
