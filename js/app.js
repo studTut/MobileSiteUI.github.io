@@ -117,13 +117,13 @@ function animate() {
     }
 	object6.position.y = posY;
 /*
- if(beta <= 50) {
-	  object6.position.y = posY;
-    } else {
-	    object6.position.y = posY;
+ if(posY <= -3000) {
+	  object6.position.y = -3000;
+    } else if (3000 =< posY ){
+	    object6.position.y = 3000;
     }*/
    
-    document.querySelector('#num5').style.backgroundColor = 'hsl(170,80%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(70,50%,50%)'
 
     renderer.render(scene, camera);
 }
