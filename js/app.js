@@ -64,7 +64,7 @@ function init() {
     scene.add(object6);
     object6.position.x = 0;
     object6.position.y = -1*3*space;
-    object6.position.z = -1*space;
+    object6.position.z = -2*space;
 
 
 
@@ -117,7 +117,7 @@ function animate() {
     }
 
     object6.position.y = posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
 
     renderer.render(scene, camera);
 }
