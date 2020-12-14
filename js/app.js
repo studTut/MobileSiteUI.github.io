@@ -58,7 +58,7 @@ function init() {
     scene.add(object5);
     object5.position.x = 0;
     object5.position.y = 1.5*space;
-    object5.position.z = 2*space;
+    object5.position.z = space;
     
     object6 = new THREE.CSS3DObject(document.getElementById('text'));
     scene.add(object6);
@@ -117,7 +117,7 @@ function animate() {
     }
 
     object6.position.y = posY;
-    document.querySelector('#num5').style.backgroundColor = 'hsl(220,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(200,50%,50%)'
 
     renderer.render(scene, camera);
 }
