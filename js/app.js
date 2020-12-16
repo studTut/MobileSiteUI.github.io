@@ -45,7 +45,7 @@ function init() {
     scene.add(object6);
     object6.position.x = 0;
     object6.position.y = -3000;
-    object6.position.z = 1.2*space;
+    object6.position.z = 2*space;
 	
 
 
