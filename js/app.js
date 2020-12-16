@@ -101,7 +101,7 @@ function animate() {
 	    object6.position.y = 3000;
     }*/
    
-    document.querySelector('#num5').style.backgroundColor = 'hsl(70,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
 
     renderer.render(scene, camera);
 }
