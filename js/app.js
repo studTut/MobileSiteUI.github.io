@@ -95,7 +95,7 @@ function animate() {
     }
 	
 
- if(posY >= -4000 && poY <= 4000) {
+ if(posY >= -4000 && posY <= 4000) {
 	 object6.position.y = posY;
     } else if (posY < -4000 ){
 	    object6.position.y = -4000;
@@ -103,7 +103,7 @@ function animate() {
 	    object6.position.y = 4000;
     }
    
-    document.querySelector('#num5').style.backgroundColor = 'hsl(20,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(220,50%,50%)'
 
     renderer.render(scene, camera);
 }
