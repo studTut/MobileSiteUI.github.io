@@ -2,7 +2,8 @@ var camera, scene, renderer;
 var controls;
 var object;
 
-var alpha = 0, beta = 0, gamma = 0;
+var alpha=0, beta=0, gamma=0;
+var initBeta;
 var line = 200;
 var space = line * 1.1;
 var move;
@@ -22,7 +23,7 @@ init();
 animate();
 
 function init() {
-
+	initBeta = dat.beta;
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(
@@ -86,9 +87,9 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate);
 
-    if(beta <= 50) {
-    object5.rotation.x = 5 -1*beta/10;
-    object5.position.y = 2000 -2000*beta/50;
+    if(beta <= initBeta + 50) {
+    object5.rotation.x = 5 -1*(initBeta + beta)/10;
+    object5.position.y = 2000 -2000*(initBeta + beta)/50;
     } else {
 	    object5.rotation.x = 0;
 	    object5.position.y = 0;
@@ -103,7 +104,7 @@ function animate() {
 	    object6.position.y = 4000;
     }
    
-    document.querySelector('#num5').style.backgroundColor = 'hsl(220,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(20,50%,50%)'
 
     renderer.render(scene, camera);
 }
@@ -135,10 +136,16 @@ function setSwipe(elem) {
 		moveY = e.changedTouches[0].pageY;
 		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
 			posY += 0.05*(startY - moveY); 
+			if (posY >= 4000) {
+				posY =4000;
+			}
 			previous();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
 			posY -= 0.05*(moveY - startY);
+			if (posY <= -4000) {
+				posY= -4000;
+			}
 			next();
 		}
 	});
