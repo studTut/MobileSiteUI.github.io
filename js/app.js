@@ -3,7 +3,7 @@ var controls;
 var object;
 
 var alpha=0, beta=0, gamma=0;
-var initBeta;
+var initbeta;
 var line = 200;
 var space = line * 1.1;
 var move;
@@ -23,7 +23,7 @@ init();
 animate();
 
 function init() {
-	initBeta = dat.beta;
+	initbeta = dat.beta;
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(
@@ -87,9 +87,9 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate);
 
-    if(beta <= initBeta + 50) {
-    object5.rotation.x = 5 -1*(initBeta + beta)/10;
-    object5.position.y = 2000 -2000*(initBeta + beta)/50;
+    if(beta <= initbeta + 50) {
+    object5.rotation.x = 5 -1*(initbeta + beta)/10;
+    object5.position.y = 2000 -2000*(initbeta + beta)/50;
     } else {
 	    object5.rotation.x = 0;
 	    object5.position.y = 0;
