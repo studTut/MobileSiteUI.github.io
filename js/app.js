@@ -86,8 +86,8 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate);
 
-    if(beta <= 60) {
-    object5.rotation.x = 15 -1*beta/10;
+    if(beta <= 40) {
+    object5.rotation.x = -5 -1*beta/10;
     object5.position.y = 2200 -2000*beta/50;
     } else {
 	    object5.rotation.x = 0;
@@ -103,7 +103,7 @@ function animate() {
 	    object6.position.y = 4000;
     }
    
-    document.querySelector('#num5').style.backgroundColor = 'hsl(220,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
 
     renderer.render(scene, camera);
 }
