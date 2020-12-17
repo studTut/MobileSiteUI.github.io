@@ -96,9 +96,9 @@ box-shadow:  20px 20px 60px #7dbbd9,
 }
 #num5 a {
   padding: 10px 0;
-  text-align: center;
+  text-align:center;
   font-size:40px;
-  text-decoration: none;
+  text-decoration:none;
   color:white;
 }
 
@@ -113,7 +113,7 @@ box-shadow:  20px 20px 60px #58d958,
 }
 
 #num3 {
-  border-radius: 50px;
+border-radius: 50px;
 background: linear-gradient(145deg, #ffd6ff, #e6b4e6);
 box-shadow:  20px 20px 60px #d9aad9, 
              -20px -20px 60px #ffe6ff;background-color:pink;
