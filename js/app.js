@@ -23,7 +23,6 @@ init();
 animate();
 
 function init() {
-    initbeta = dat.beta;
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(
