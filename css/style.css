@@ -58,7 +58,26 @@ box-shadow:  20px 20px 60px #7dbbd9,
   color:black;
 }
 
+#num5 {
+  width:400px;
+  height:650px;
+  border-radius; 70px;
+  background: red;
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  font-size:50px;
+  text-decoration: none;
+  color:white;
+}
 
+#num5 a {
+  padding: 10px 0;
+  text-align: center;
+  font-size:40px;
+  text-decoration: none;
+  color:white;
+}
 
 
 
@@ -96,23 +115,4 @@ box-shadow:  20px 20px 60px #d99655,
   background-color:orange;
 }
 
-#num5 {
-  width:400px;
-  height:450px;
-  border-radius; 70px;
-  background: red;
-  display: block;
-  padding: 10px 0;
-  text-align: center;
-  font-size:50px;
-  text-decoration: none;
-  color:white;
-}
 
-#num5 a {
-  padding: 10px 0;
-  text-align: center;
-  font-size:40px;
-  text-decoration: none;
-  color:white;
-}
