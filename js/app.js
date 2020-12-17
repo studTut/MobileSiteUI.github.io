@@ -8,7 +8,7 @@ var space = line * 1.1;
 var move;
 var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
-var posY = -3800;
+var posY = -4200;
 var initbeta;
 
 
@@ -95,15 +95,15 @@ function animate() {
     }
 	
 
- if(posY >= -3800 && posY <= 3800) {
+ if(posY >= -4200 && posY <= 4000) {
 	 object6.position.y = posY;
-    } else if (posY < -3800 ){
-	    object6.position.y = -3800;
+    } else if (posY < -4200 ){
+	    object6.position.y = -4200;
     } else if (posY > 4000) {
 	    object6.position.y = 4000;
     }
    
-    document.querySelector('#num5').style.backgroundColor = 'hsl(180,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(100,50%,50%)'
 
     renderer.render(scene, camera);
 }
@@ -143,7 +143,7 @@ function setSwipe(elem) {
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
 			
-			if (posY >= -3800) {
+			if (posY >= -4200) {
 				posY -= 0.1*(moveY - startY);
 			} else {
 				posY -= 0;
