@@ -8,7 +8,7 @@ var space = line * 1.1;
 var move;
 var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
-var posY = -3000;
+var posY = -3800;
 
 
 
@@ -44,7 +44,7 @@ function init() {
     object6 = new THREE.CSS3DObject(document.getElementById('text'));
     scene.add(object6);
     object6.position.x = 0;
-    object6.position.y = -3000;
+    object6.position.y = 0;
     object6.position.z = 0;
 	
 
@@ -95,15 +95,15 @@ function animate() {
     }
 	
 
- if(posY <= -3800) {
-	  object6.position.y = -3800;
-    } else if (3700 =< posY ){
-	    object6.position.y = 3700;
-    } else {
-	    object6.position.y = posY;
+ if(posY >= -4000 && poY <= 4000) {
+	 object6.position.y = posY;
+    } else if (posY < -4000 ){
+	    object6.position.y = -4000;
+    } else if (posY > 4000) {
+	    object6.position.y = 4000;
     }
    
-    document.querySelector('#num5').style.backgroundColor = 'hsl(10,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(20,50%,50%)'
 
     renderer.render(scene, camera);
 }
