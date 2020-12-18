@@ -78,7 +78,7 @@ function init() {
 	
 	window.addEventListener("load", function(){
 	// 数値表示部分のDOM取得
-	number = document.getElementById("number");
+	//number = document.getElementById("number");
 	
 	// 数値を画面に表示
 	//no = 0;
