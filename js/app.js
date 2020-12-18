@@ -128,11 +128,16 @@ function setSwipe(elem) {
 	let startY;		// タッチ開始 y座標
 	let moveY;	// スワイプ中の y座標
 	let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
+    var tm = 0;
+    var t = 0;
+	var countup = function() {tm ++;}
+	var a = -10;//減速２０
 	
 	// タッチ開始時： y座標を取得
 	t.addEventListener("touchstart", function(e) {
 		e.preventDefault();
 		startY = e.touches[0].pageY;
+		var id = setInterval(countup,10);// タイマースタートと同時にタイマーを取得
 	});
 	
 	// スワイプ中： y座標を取得
@@ -142,35 +147,46 @@ function setSwipe(elem) {
 		if (startY > moveY && startY > moveY + dist) {		// 下へ移動（上へスクロール）
 			if (posY <= 4200) {
 				posY +=0.1*(startY - moveY);
-			} else {
-				posY += 0;
-			}
+			} else {posY += 0;}
 			previous();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 上へ移動（下へスクロール）
 			
-			if (posY >= -4000) {
-				posY -= 0.1*(moveY - startY);
-			} else {
-				posY -= 0;
-			}
+			if (posY >= -4000) {posY -= 0.1*(moveY - startY);
+			} else {posY -= 0;}
 			next();
 		}
 	});
 	
 	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
-	/*
+	
 	t.addEventListener("touchend", function(e) {
-		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
-			//posY +=
-			//posY += startY - moveY; 
-			//previous();
+        clearInterval(id);
+		if (startY > moveY && startY > moveY + dist) {		// 下へスクロール
+			var initV = (startY - moveY)/tm;//初速度
+			//惰力の制御
+			var coast1 = setInterval(function() {
+                t++;
+				var VT = initV + a*t
+				if (VT > 0){ posY += VT;
+                } else if (VT <= 0) {
+                    cleanInterval(coast1); t = 0;
+                }}, 10);　
+				
+				
+		}　else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
+            var initV2 = (moveY - startY)/tm;//初速度
+			//惰力の制御
+			var coast1 = setInterval(function() {
+                t++;
+				var VT2 = initV2 + a*t
+				if (VT2 > 0){ posY -= VT2;
+                } else if (VT2 <= 0) {
+                    cleanInterval(coast1); t = 0;
+                }}, 10);　
 		}
-		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
-			//posY -= moveY - startY;
-			//next();
-		}
-	});*/
+			tm = 0;//はじめのタイマーをリセット
+	});
 	
 }
 
