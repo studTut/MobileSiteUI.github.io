@@ -23,8 +23,7 @@ init();
 animate();
 
 function init() {
-    initbeta = beta;
-	
+    //initbeta = beta;
     window.addEventListener("deviceorientation", (dat) => {
         initalpha = dat.alpha;  // z軸（反時計回り）
         initbeta  = dat.beta;   // x軸（引き起こす）
@@ -189,7 +188,7 @@ function previous(){
 //数値を画面に表示する
 
 function setNumber(){
-	number.innerHTML = 114514810;
+	number.innerHTML = initbeta;
 }
 
 
