@@ -9,7 +9,7 @@ var move;
 var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
 var posY = -4000;
-var initbeta;
+var initbeta,initalpha,initgamma;
 
 
 
@@ -23,6 +23,7 @@ init();
 animate();
 
 function init() {
+    initbeta = beta;
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(
         75, 
@@ -87,12 +88,12 @@ function animate() {
     requestAnimationFrame(animate);
 
 	
-    if(beta <= 50) {
+    if(beta <= initbeta + 10) {
     object5.rotation.x = 5 -1*beta/10;
-    object5.position.y = 2200 -2000*beta/50;
+    object5.position.y = 2100 -2000*beta/(initbeta + 10);
     } else {
 	    object5.rotation.x = 0;
-	    object5.position.y = 200;
+	    object5.position.y = 100;
     }
 	
 
