@@ -140,7 +140,7 @@ function setSwipe(elem) {
 	t.addEventListener("touchstart", function(e) {
 		e.preventDefault();
 		startY = e.touches[0].pageY;
-		//var id = setInterval(countup,10); タイマースタートと同時にタイマーを取得
+		var id = setInterval(countup,10); タイマースタートと同時にタイマーを取得
 	});
 	
 	// スワイプ中： y座標を取得
@@ -164,10 +164,10 @@ function setSwipe(elem) {
 	
 	// タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
 	
-	/*t.addEventListener("touchend", function(e) {
+	t.addEventListener("touchend", function(e) {
         clearInterval(id);
 		if (startY > moveY && startY > moveY + dist) {		// 下へスクロール
-			var initV = (startY - moveY)/tm;//初速度
+			/*var initV = (startY - moveY)/tm;//初速度
 			//惰力の制御
 			var coast1 = setInterval(function() {
                 t++;
@@ -175,11 +175,11 @@ function setSwipe(elem) {
 				if (VT > 0){ posY += VT;
                 } else if (VT <= 0) {
                     cleanInterval(coast1); t = 0;
-                }}, 10);　
+                }}, 10);　*/
 				
 				
 		}　else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
-            var initV2 = (moveY - startY)/tm;//初速度
+            		/*var initV2 = (moveY - startY)/tm;//初速度
 			//惰力の制御
 			var coast1 = setInterval(function() {
                 t++;
@@ -187,29 +187,29 @@ function setSwipe(elem) {
 				if (VT2 > 0){ posY -= VT2;
                 } else if (VT2 <= 0) {
                     cleanInterval(coast1); t = 0;
-                }}, 10);　
+                }}, 10);　*/
 		}
-			tm = 0;//はじめのタイマーをリセット
-	});*/
+			//tm = 0;//はじめのタイマーをリセット
+	});
 	
 }
 
 
 function next(){
 	no = Math.round(posY);
-	//setNumber();
+	setNumber();
 }
 
  //前の番号を表示
 function previous(){
 	no = Math.round(posY);
-	//setNumber();
+	setNumber();
 }
 
 //数値を画面に表示する
 
 function setNumber(){
-	//number.innerHTML = initbeta;
+	number.innerHTML = tm;
 }
 
 
