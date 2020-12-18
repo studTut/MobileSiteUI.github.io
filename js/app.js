@@ -183,7 +183,7 @@ function previous(){
 //数値を画面に表示する
 
 function setNumber(){
-	number.innerHTML = ;
+	number.innerHTML = initbeta;
 }
 
 
