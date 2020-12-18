@@ -8,7 +8,7 @@ var space = line * 1.1;
 var move;
 var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
-var posY = -4200;
+var posY = -4000;
 var initbeta;
 
 
@@ -96,10 +96,10 @@ function animate() {
     }
 	
 
- if(posY >= -4200 && posY <= 4200) {
+ if(posY >= -4000 && posY <= 4200) {
 	 object6.position.y = posY;
-    } else if (posY < -4200 ){
-	    object6.position.y = -4200;
+    } else if (posY < -4000 ){
+	    object6.position.y = -4000;
     } else if (posY > 4200) {
 	    object6.position.y = 4200;
     }
@@ -144,7 +144,7 @@ function setSwipe(elem) {
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
 			
-			if (posY >= -4200) {
+			if (posY >= -4000) {
 				posY -= 0.1*(moveY - startY);
 			} else {
 				posY -= 0;
