@@ -10,7 +10,7 @@ var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
 var posY = -4000;
 var initbeta,initalpha,initgamma;
-var arg = 70;
+var arg = 60;
 //var arg;
 var tm = 0;
 var t = 0;
