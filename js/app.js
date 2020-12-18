@@ -24,6 +24,7 @@ animate();
 
 function init() {
     initbeta = beta;
+
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(
         75, 
@@ -67,6 +68,7 @@ function init() {
 	number = document.getElementById("number");
 	
 	// 数値を画面に表示
+		number.innerHTML = initbeta;
 	no = 0;
 	//setNumber();
 
@@ -88,9 +90,9 @@ function animate() {
     requestAnimationFrame(animate);
 
 	
-    if(beta <= initbeta + 10) {
+    if(beta <= 50) {
     object5.rotation.x = 5 -1*beta/10;
-    object5.position.y = 2100 -2000*beta/(initbeta + 10);
+    object5.position.y = 2100 -2000*beta/50;
     } else {
 	    object5.rotation.x = 0;
 	    object5.position.y = 100;
