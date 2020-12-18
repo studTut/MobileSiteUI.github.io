@@ -192,9 +192,9 @@ function setSwipe(elem) {
                     cleanInterval(coast1); t = 0;
                 }}, 10);　*/
 		}
-			tm = 0;//はじめのタイマーをリセット
-		setNumber();
 	});
+		tm = 0;//はじめのタイマーをリセット
+		setNumber();
 	
 }
 
