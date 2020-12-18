@@ -10,7 +10,7 @@ var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
 var posY = -4000;
 var initbeta,initalpha,initgamma;
-//var arg = 50;
+var arg = 50;
 //var arg = initbeta + 10;
 var tm = 0;
 var t = 0;
@@ -101,9 +101,9 @@ function animate() {
     requestAnimationFrame(animate);
     
 	
-    if(beta <= 50) {
-    object5.rotation.x = 50/10 -1*beta/10;
-    object5.position.y = 2100 -2000*beta/50;
+    if(beta <= arg) {
+    object5.rotation.x = arg/10 -1*beta/10;
+    object5.position.y = 2100 -2000*beta/arg;
     } else {
 	    object5.rotation.x = 0;
 	    object5.position.y = 100;
