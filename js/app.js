@@ -66,7 +66,7 @@ function init() {
 	number = document.getElementById("number");
 	
 	// 数値を画面に表示
-	no = 0;
+	no = posY;
 	setNumber();
 
 	// スワイプイベント設定
