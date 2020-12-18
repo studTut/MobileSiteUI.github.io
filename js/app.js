@@ -68,7 +68,7 @@ function init() {
 	number = document.getElementById("number");
 	
 	// 数値を画面に表示
-		number.innerHTML = initbeta;
+		number.innerHTML = 1121;
 	no = 0;
 	//setNumber();
 
