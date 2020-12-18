@@ -81,9 +81,9 @@ function init() {
 	number = document.getElementById("number");
 	
 	// 数値を画面に表示
-	no = 0;
-	tm = 0;
-	setNumber();
+	//no = 0;
+	//tm = 0;
+	//setNumber();
 
 	// スワイプイベント設定
 	setSwipe("#text");
@@ -147,7 +147,7 @@ function setSwipe(elem) {
 		
 	// スワイプ中： y座標を取得
 	t.addEventListener("touchmove", function(e) {
-		setNumber();
+		//setNumber();
 		e.preventDefault();
 		moveY = e.changedTouches[0].pageY;
 		if (startY > moveY && startY > moveY + dist) {		// 下へ移動（上へスクロール）
@@ -170,7 +170,7 @@ function setSwipe(elem) {
 	t.addEventListener("touchend", function(e) {
         clearInterval(id);
 		if (startY > moveY && startY > moveY + dist) {		// 下へスクロール
-			/*var initV = (startY - moveY)/tm;//初速度
+			var initV = (startY - moveY)/tm;//初速度
 			//惰力の制御
 			var coast1 = setInterval(function() {
                 t++;
@@ -178,11 +178,11 @@ function setSwipe(elem) {
 				if (VT > 0){ posY += VT;
                 } else if (VT <= 0) {
                     cleanInterval(coast1); t = 0;
-                }}, 10);　*/
+                }}, 10);　
 				
 				
 		}　else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
-            		/*var initV2 = (moveY - startY)/tm;//初速度
+            		var initV2 = (moveY - startY)/tm;//初速度
 			//惰力の制御
 			var coast1 = setInterval(function() {
                 t++;
@@ -190,11 +190,11 @@ function setSwipe(elem) {
 				if (VT2 > 0){ posY -= VT2;
                 } else if (VT2 <= 0) {
                     cleanInterval(coast1); t = 0;
-                }}, 10);　*/
+                }}, 10);
 		}
 	});
 		tm = 0;//はじめのタイマーをリセット
-		setNumber();
+		//setNumber();
 	
 }
 
@@ -212,9 +212,9 @@ function previous(){
 
 //数値を画面に表示する
 */
-function setNumber(){
-	number.innerHTML = tm;
-}
+//function setNumber(){
+	//number.innerHTML = tm;
+//}
 
 
 
