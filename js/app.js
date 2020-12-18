@@ -148,12 +148,12 @@ function setSwipe(elem) {
 	t.addEventListener("touchmove", function(e) {
 		e.preventDefault();
 		moveY = e.changedTouches[0].pageY;
+		setNumber();
 		if (startY > moveY && startY > moveY + dist) {		// 下へ移動（上へスクロール）
 			if (posY <= 4200) {
 				posY +=0.1*(startY - moveY);
 			} else {posY += 0;}
 			//previous();
-			setNumber();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 上へ移動（下へスクロール）
 			
@@ -161,7 +161,6 @@ function setSwipe(elem) {
 				posY -= 0.1*(moveY - startY);
 			} else {posY -= 0;}
 			//next();
-			setNumber();
 		}
 	});
 	
@@ -192,7 +191,7 @@ function setSwipe(elem) {
                     cleanInterval(coast1); t = 0;
                 }}, 10);　*/
 		}
-			//tm = 0;//はじめのタイマーをリセット
+			tm = 0;//はじめのタイマーをリセット
 	});
 	
 }
