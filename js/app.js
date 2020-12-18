@@ -24,7 +24,6 @@ animate();
 
 function init() {
     scene = new THREE.Scene();
-
     camera = new THREE.PerspectiveCamera(
         75, 
         window.innerWidth / window.innerHeight, 
@@ -68,7 +67,7 @@ function init() {
 	
 	// 数値を画面に表示
 	no = 0;
-	setNumber();
+	//setNumber();
 
 	// スワイプイベント設定
 	setSwipe("#text");
@@ -124,14 +123,12 @@ function setSwipe(elem) {
 	// タッチ開始時： y座標を取得
 	t.addEventListener("touchstart", function(e) {
 		e.preventDefault();
-		startX = e.touches[0].pageX;
 		startY = e.touches[0].pageY;
 	});
 	
 	// スワイプ中： y座標を取得
 	t.addEventListener("touchmove", function(e) {
 		e.preventDefault();
-		moveX = e.changedTouches[0].pageX;
 		moveY = e.changedTouches[0].pageY;
 		if (startY > moveY && startY > moveY + dist) {		// 下へ移動（上へスクロール）
 			if (posY <= 4200) {
@@ -139,7 +136,7 @@ function setSwipe(elem) {
 			} else {
 				posY += 0;
 			}
-			previous();
+			//previous();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 上へ移動（下へスクロール）
 			
@@ -148,7 +145,7 @@ function setSwipe(elem) {
 			} else {
 				posY -= 0;
 			}
-			next();
+			//next();
 		}
 	});
 	
@@ -167,25 +164,24 @@ function setSwipe(elem) {
 	});*/
 	
 }
+
+/*
 function next(){
 	no = Math.round(posY);
 	setNumber();
 }
 
-/*
- * 前の番号を表示
- */
+ //前の番号を表示
 function previous(){
 	no = Math.round(posY);
 	setNumber();
 }
 
-/*
- * 数値を画面に表示する*/
+//数値を画面に表示する
 
 function setNumber(){
 	number.innerHTML = no;
 }
-
+*/
 
 
