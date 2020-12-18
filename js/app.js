@@ -130,7 +130,7 @@ function setSwipe(elem) {
 	let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
         var tm = 0;
         var t = 0;
-	var countup = function() {tm ++;};
+	//var countup = function() {tm ++;}
 	var a = -10;//減速２０
 	
 	// タッチ開始時： y座標を取得
