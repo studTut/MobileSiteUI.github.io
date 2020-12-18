@@ -54,6 +54,7 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight); 
     renderer.domElement.style.position = 'absolute'; // スタイル設定
     document.getElementById('container').appendChild(renderer.domElement); //#containerにappend
+	
     // カメラコントローラー
     controls = new THREE.TrackballControls(camera, renderer.domElement);
     controls.rotateSpeed = 0.5; // 感度設定
@@ -66,7 +67,7 @@ function init() {
 	number = document.getElementById("number");
 	
 	// 数値を画面に表示
-	no = posY;
+	no = ;
 	setNumber();
 
 	// スワイプイベント設定
@@ -104,7 +105,7 @@ function animate() {
 	    object6.position.y = 4200;
     }
    
-    document.querySelector('#num5').style.backgroundColor = 'hsl(200,50%,50%)'
+    document.querySelector('#num5').style.backgroundColor = 'hsl(220,50%,50%)'
 
     renderer.render(scene, camera);
 }
