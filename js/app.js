@@ -143,12 +143,11 @@ function setSwipe(elem) {
 		startY = e.touches[0].pageY;
 		var id = setInterval(countup,10); タイマースタートと同時にタイマーを取得
 	});
-	
+		setNumber();
 	// スワイプ中： y座標を取得
 	t.addEventListener("touchmove", function(e) {
 		e.preventDefault();
 		moveY = e.changedTouches[0].pageY;
-		setNumber();
 		if (startY > moveY && startY > moveY + dist) {		// 下へ移動（上へスクロール）
 			if (posY <= 4200) {
 				posY +=0.1*(startY - moveY);
@@ -192,6 +191,7 @@ function setSwipe(elem) {
                 }}, 10);　*/
 		}
 			tm = 0;//はじめのタイマーをリセット
+		setNumber();
 	});
 	
 }
