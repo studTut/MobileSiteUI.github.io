@@ -29,7 +29,7 @@ window.addEventListener("deviceorientation", (dat) => {
         initalpha = dat.alpha;  // z軸（反時計回り）
         initbeta  = dat.beta;   // x軸（引き起こす）
         initgamma = dat.gamma;  // y軸（右に傾ける）
-	arg = initbeta + 10;
+	arg = initbeta + 15;
     }, {once : true} );
 init();
 animate();
