@@ -11,6 +11,7 @@ var number;			// 数値表示部分のDOM取得用
 var posY = -4000;
 var initbeta = 40, initalpha = 40, initgamma = 40;
 var arg = 50;
+//var arg = initbeta + 10;
 
 
 
