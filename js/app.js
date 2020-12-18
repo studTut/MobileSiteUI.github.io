@@ -82,6 +82,7 @@ function init() {
 	
 	// 数値を画面に表示
 	no = 0;
+	tm = 0;
 	setNumber();
 
 	// スワイプイベント設定
