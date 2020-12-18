@@ -10,8 +10,12 @@ var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
 var posY = -4000;
 var initbeta,initalpha,initgamma;
-var arg = 50;
+//var arg = 50;
 //var arg = initbeta + 10;
+var tm = 0;
+var t = 0;
+//var countup = function() {tm ++;}
+var a = -10;//減速２０
 
 
 
@@ -129,10 +133,7 @@ function setSwipe(elem) {
 	let startY;		// タッチ開始 y座標
 	let moveY;	// スワイプ中の y座標
 	let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
-        var tm = 0;
-        var t = 0;
-	//var countup = function() {tm ++;}
-	var a = -10;//減速２０
+
 	
 	// タッチ開始時： y座標を取得
 	t.addEventListener("touchstart", function(e) {
@@ -153,7 +154,8 @@ function setSwipe(elem) {
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 上へ移動（下へスクロール）
 			
-			if (posY >= -4000) {posY -= 0.1*(moveY - startY);
+			if (posY >= -4000) {
+				posY -= 0.1*(moveY - startY);
 			} else {posY -= 0;}
 			next();
 		}
