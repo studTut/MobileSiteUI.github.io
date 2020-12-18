@@ -8,6 +8,9 @@ body {
   overflow: hidden;
 }
 
+#number {
+  font-size:50px;
+}
 
 #text {
   text-align:center;
