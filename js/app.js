@@ -152,14 +152,16 @@ function setSwipe(elem) {
 			if (posY <= 4200) {
 				posY +=0.1*(startY - moveY);
 			} else {posY += 0;}
-			previous();
+			//previous();
+			setNumber();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 上へ移動（下へスクロール）
 			
 			if (posY >= -4000) {
 				posY -= 0.1*(moveY - startY);
 			} else {posY -= 0;}
-			next();
+			//next();
+			setNumber();
 		}
 	});
 	
@@ -195,7 +197,7 @@ function setSwipe(elem) {
 	
 }
 
-
+/*
 function next(){
 	no = Math.round(posY);
 	setNumber();
@@ -208,7 +210,7 @@ function previous(){
 }
 
 //数値を画面に表示する
-
+*/
 function setNumber(){
 	number.innerHTML = tm;
 }
