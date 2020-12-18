@@ -10,6 +10,7 @@ var no = 1;				// 数値格納用
 var number;			// 数値表示部分のDOM取得用
 var posY = -4000;
 var initbeta = 40, initalpha = 40, initgamma = 40;
+var arg = 50;
 
 
 
@@ -93,7 +94,7 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-    var arg = initbeta + 10;
+    
 	
     if(beta <= arg) {
     object5.rotation.x = arg/10 -1*beta/10;
