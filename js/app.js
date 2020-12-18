@@ -68,9 +68,9 @@ function init() {
 	number = document.getElementById("number");
 	
 	// 数値を画面に表示
-		number.innerHTML = 1121;
+		//number.innerHTML = 1121;
 	no = 0;
-	//setNumber();
+	setNumber();
 
 	// スワイプイベント設定
 	setSwipe("#text");
@@ -139,7 +139,7 @@ function setSwipe(elem) {
 			} else {
 				posY += 0;
 			}
-			//previous();
+			previous();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 上へ移動（下へスクロール）
 			
@@ -148,7 +148,7 @@ function setSwipe(elem) {
 			} else {
 				posY -= 0;
 			}
-			//next();
+			next();
 		}
 	});
 	
@@ -168,7 +168,7 @@ function setSwipe(elem) {
 	
 }
 
-/*
+
 function next(){
 	no = Math.round(posY);
 	setNumber();
@@ -185,6 +185,6 @@ function previous(){
 function setNumber(){
 	number.innerHTML = no;
 }
-*/
+
 
 
