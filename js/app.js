@@ -142,12 +142,12 @@ function setSwipe(elem) {
 		e.preventDefault();
 		startY = e.touches[0].pageY;
 		var id = setInterval(countup,10); タイマースタートと同時にタイマーを取得
-		setNumber();
+		//setNumber();
 	});
 		
 	// スワイプ中： y座標を取得
 	t.addEventListener("touchmove", function(e) {
-		//setNumber();
+		setNumber();
 		e.preventDefault();
 		moveY = e.changedTouches[0].pageY;
 		if (startY > moveY && startY > moveY + dist) {		// 下へ移動（上へスクロール）
