@@ -117,25 +117,23 @@ function render() {
 
 function setSwipe(elem) {
 	let t = document.querySelector(elem);
-	let startX;		// タッチ開始 x座標
 	let startY;		// タッチ開始 y座標
-	let moveX;	// スワイプ中の x座標
 	let moveY;	// スワイプ中の y座標
 	let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
 	
-	// タッチ開始時： xy座標を取得
+	// タッチ開始時： y座標を取得
 	t.addEventListener("touchstart", function(e) {
 		e.preventDefault();
 		startX = e.touches[0].pageX;
 		startY = e.touches[0].pageY;
 	});
 	
-	// スワイプ中： xy座標を取得
+	// スワイプ中： y座標を取得
 	t.addEventListener("touchmove", function(e) {
 		e.preventDefault();
 		moveX = e.changedTouches[0].pageX;
 		moveY = e.changedTouches[0].pageY;
-		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
+		if (startY > moveY && startY > moveY + dist) {		// 下へ移動（上へスクロール）
 			if (posY <= 4200) {
 				posY +=0.1*(startY - moveY);
 			} else {
@@ -143,7 +141,7 @@ function setSwipe(elem) {
 			}
 			previous();
 		}
-		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
+		else if (startY < moveY && startY + dist < moveY) {	// 上へ移動（下へスクロール）
 			
 			if (posY >= -4000) {
 				posY -= 0.1*(moveY - startY);
@@ -158,15 +156,16 @@ function setSwipe(elem) {
 	/*
 	t.addEventListener("touchend", function(e) {
 		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
-			posY += startY - moveY; 
-			previous();
+			//posY +=
+			//posY += startY - moveY; 
+			//previous();
 		}
 		else if (startY < moveY && startY + dist < moveY) {	// 左から右にスワイプ
-			posY -= moveY - startY;
-			next();
+			//posY -= moveY - startY;
+			//next();
 		}
-	});
-	*/
+	});*/
+	
 }
 function next(){
 	no = Math.round(posY);
