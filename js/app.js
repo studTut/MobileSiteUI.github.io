@@ -11,7 +11,7 @@ var number;			// 数値表示部分のDOM取得用
 var posY = -4000;
 var initbeta,initalpha,initgamma;
 //var arg = 50;
-var arg = 50;
+var arg = 60;
 var tm = 0;
 var t = 0;
 //var countup = function() {tm ++;}
@@ -29,7 +29,7 @@ window.addEventListener("deviceorientation", (dat) => {
         initalpha = dat.alpha;  // z軸（反時計回り）
         initbeta  = dat.beta;   // x軸（引き起こす）
         initgamma = dat.gamma;  // y軸（右に傾ける）
-	arg = initbeta + 15;
+	//arg = initbeta + 15;
     }, {once : true} );
 init();
 animate();
