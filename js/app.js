@@ -94,11 +94,11 @@ function onWindowResize() {
 
 function animate() {
     requestAnimationFrame(animate);
-
+    var arg = initbeta + 10;
 	
-    if(beta <= 50) {
-    object5.rotation.x = 5 -1*beta/10;
-    object5.position.y = 2100 -2000*beta/50;
+    if(beta <= arg) {
+    object5.rotation.x = arg/10 -1*beta/10;
+    object5.position.y = 2100 -2000*beta/arg;
     } else {
 	    object5.rotation.x = 0;
 	    object5.position.y = 100;
@@ -128,9 +128,9 @@ function setSwipe(elem) {
 	let startY;		// タッチ開始 y座標
 	let moveY;	// スワイプ中の y座標
 	let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
-    var tm = 0;
-    var t = 0;
-	var countup = function() {tm ++;}
+        var tm = 0;
+        var t = 0;
+	var countup = function() {tm ++;};
 	var a = -10;//減速２０
 	
 	// タッチ開始時： y座標を取得
