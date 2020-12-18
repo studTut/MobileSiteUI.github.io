@@ -96,12 +96,12 @@ function animate() {
     }
 	
 
- if(posY >= -4200 && posY <= 4000) {
+ if(posY >= -4200 && posY <= 4200) {
 	 object6.position.y = posY;
     } else if (posY < -4200 ){
 	    object6.position.y = -4200;
-    } else if (posY > 4000) {
-	    object6.position.y = 4000;
+    } else if (posY > 4200) {
+	    object6.position.y = 4200;
     }
    
     document.querySelector('#num5').style.backgroundColor = 'hsl(200,50%,50%)'
@@ -135,7 +135,7 @@ function setSwipe(elem) {
 		moveX = e.changedTouches[0].pageX;
 		moveY = e.changedTouches[0].pageY;
 		if (startY > moveY && startY > moveY + dist) {		// 右から左にスワイプ
-			if (posY <= 4000) {
+			if (posY <= 4200) {
 				posY +=0.1*(startY - moveY);
 			} else {
 				posY += 0;
