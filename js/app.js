@@ -19,16 +19,17 @@ window.addEventListener("deviceorientation", (dat) => {
     gamma = dat.gamma;  // y軸（右に傾ける）
 });
 
-init();
-animate();
-
-function init() {
-    //initbeta = beta;
     window.addEventListener("deviceorientation", (dat) => {
         initalpha = dat.alpha;  // z軸（反時計回り）
         initbeta  = dat.beta;   // x軸（引き起こす）
         initgamma = dat.gamma;  // y軸（右に傾ける）
     }, {once : true} );
+init();
+animate();
+
+function init() {
+    //initbeta = beta;
+
 	
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(
